@@ -1,0 +1,99 @@
+/*-------------- top-slider -----------------*/
+.top-slider{
+	padding:0 40px;
+
+	&__item{
+		min-height: 436px;
+		font-family: $font-literata;
+		position: relative;
+	}
+
+	&__content{
+		padding: 40px 0;
+		position: relative;
+		left: -100%;
+		transition: left 0.3s ease 0.5s;
+	}
+
+	&__img{
+		position: absolute;
+		width: 1124px;
+		height: 436px;
+		background-repeat: no-repeat;
+		background-position: 100% 50%;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		right: -100%;
+		transition: right 0.3s ease 0.3s;
+	}
+
+	&__title{
+		@include font(normal, 100, rem(50px), 1.2, $color-text);
+		letter-spacing: 3px;
+		margin-bottom: 7px;
+	}
+
+	&__type{
+		@include font(normal, 900, rem(100px), 1, $color-brown);
+		text-transform: uppercase;
+		letter-spacing: 5.5px;
+	}
+
+	.btn{
+		min-width: 190px;
+		margin-top: 45px;
+	}
+
+	.slick-current &__img{right: 0;}
+	.slick-current &__content{left: 0;}
+
+	.slick-dots,
+	.slick-dots li{
+		@include reset-list;
+	}
+
+	.slick-dots{
+		position: absolute;
+		@include top-center;
+		left: 25px;
+	}
+
+	.slick-dots button{
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		background: transparent;
+		border: 1px solid #080808;
+		border-radius: 50%;
+		padding: 0;
+		margin: 10px 0;
+		outline: none;
+		font-size: 0;
+		position: relative;
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+	}
+
+	.slick-dots button:hover{background: #080808;}
+
+	.slick-dots button::after{
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 0;
+		background: #080808;
+		position: absolute;
+		top: 100%;
+		left: 4px;
+		margin: 10px 0;
+		transition: all 0.3s ease 0s;
+	}
+
+	.slick-active button{
+		background: #080808;
+		margin-bottom: 200px;
+	}
+
+	.slick-active button::after{height: 190px;}
+}

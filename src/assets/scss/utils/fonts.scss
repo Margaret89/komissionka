@@ -158,3 +158,27 @@
     font-weight: 700;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Literata';
+    src: local('Literata Black'), local('Literata-Black'), url('#{$path-fonts}/Literata/Literatablack.woff2') format('woff2'), url('#{$path-fonts}/Literata/Literatablack.woff') format('woff'), url('#{$path-fonts}/Literata/Literatablack.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Literata';
+    src: local('Literata Black Italic'), local('Literata-BlackItalic'), url('#{$path-fonts}/Literata/Literatablackitalic.woff2') format('woff2'), url('#{$path-fonts}/Literata/Literatablackitalic.woff') format('woff'), url('#{$path-fonts}/Literata/Literatablackitalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Literata';
+    src: local('Literata Extra'), local('Literata-Extra'), url('#{$path-fonts}/Literata/Literataextralight.woff2') format('woff2'), url('#{$path-fonts}/Literata/Literataextralight.woff') format('woff'), url('#{$path-fonts}/Literata/Literataextralight.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Literata';
+    src: local('Literata Extra Italic'), local('Literata-ExtraItalic'), url('#{$path-fonts}/Literata/Literataextralightitalic.woff2') format('woff2'), url('#{$path-fonts}/Literata/Literataextralightitalic.woff') format('woff'), url('#{$path-fonts}/Literata/Literataextralightitalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}

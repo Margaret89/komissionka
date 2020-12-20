@@ -1,0 +1,33 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Содержание';
+	- 
+		var pagelist = [
+			{href: 'main.html',name:'Главная'},
+			{href: 'tipografika.html',name:'Типографика'},
+		];
+
+block content
+	section.top-slider.js-top-slider
+		-
+			var list=[
+				{title:'Коллекция барной мебели в стиле', type:'Loft', img:'top-slide1.jpg'},
+				{title:'Коллекция барной мебели в стиле 2', type:'Loft', img:'top-slide2.jpg'},
+				{title:'Коллекция барной мебели в стиле 3', type:'Loft', img:'top-slide3.jpg'},
+				{title:'Коллекция барной мебели в стиле 4', type:'Loft', img:'top-slide4.jpg'},
+			]
+
+		each item in list
+			.top-slider__item
+				.top-slider__img(style="background-image: url(/assets/img/"+item.img+")")
+				.top-slider__content
+					.container
+						.row
+							.col-5
+								.top-slider__title= item.title
+								.top-slider__type= item.type
+								a.btn.btn_border(href="#") Подробнее
+								
+
+
