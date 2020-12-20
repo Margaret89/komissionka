@@ -1,0 +1,137 @@
+.footer{
+	padding: 30px 0;
+	background: #181818;
+	@include font(normal, 300, rem(17px), 1.2, #fff);
+
+	.form-subcribe{
+		transform: translateY(-50%);
+		margin-top: -30px;
+	}
+
+	.social-white{margin-bottom: 27px;}
+}
+
+.footer-info{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 17px;
+	margin-top: -30px;
+
+	&__logo{
+		width: 186px;
+		margin-right: 28px;
+
+		a{border-bottom: none;}
+	}
+
+	&__action{margin: 0 28px;}
+}
+
+.footer-menu{
+	column-count: 2;
+	column-gap: 40px;
+	margin: 0 28px;
+
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&__item,
+	&__link{
+		@include font(normal, 300, rem(17px), 1.2, #fff);
+		border-bottom: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__link:hover{color: $color-brown;}
+	&__item{margin-bottom: 10px;}
+}
+
+.social-white{
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	&__item{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		border: 1px solid #fff;
+		transition: all 0.3s ease 0s;
+
+		.icon{
+			fill: #fff;
+			transition: all 0.3s ease 0s;
+		}
+	}
+
+	&__item:not(:last-child){margin-right: 20px;}
+	&__item:hover{border-color: $color-brown;}
+	&__item:hover .icon{fill: $color-brown;}
+}
+
+.footer-pay{
+	&__label{
+		@include font(normal, 300, rem(17px), 1.2, #fff);
+		margin-bottom: 8px;
+	}
+
+	&__list{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__item{border-bottom: none;}
+	&__item:not(:last-child){margin-right: 20px;}
+}
+
+.footer-contacts{
+	@include font(normal, 300, rem(17px), 1.7, #fff);
+
+	&__phone{
+		font-size: rem(22px);
+		font-weight: 500;
+	}
+
+	a{
+		color: #fff;
+		border-bottom: none;
+	}
+}
+
+.footer-bottom{
+	display: flex;
+	justify-content: center;
+	padding: 27px 0;
+	border-top: 1px solid rgba(223, 223, 223, 0.3);
+	@include font(normal, 300, rem(16px), 1.2, #fff);
+
+	&__polit{
+		margin-left: 28px;
+		padding-left: 28px;
+		position: relative;
+
+		a{
+			color: #fff;
+			transition: all 0.2s ease 0s;
+			border-bottom: none;
+		}
+
+		a:hover{color: $color-brown;}
+	}
+
+	&__polit::before{
+		content: '';
+		display: inline-block;
+		width: 1px;
+		height: 16px;
+		background: #fff;
+		position: absolute;
+		@include top-center;
+		left: 0;
+	}
+}

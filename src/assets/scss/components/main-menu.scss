@@ -15,8 +15,10 @@
 		@include font(normal, 500, rem(20px), 1.2, $color-text);
 		text-decoration: none;
 		border-bottom: none;
+		transition: all 0.2s ease 0s;
 	}
 
+	&__link:hover{color: $color-brown;}
 	&__item{padding: 0 8px;}
 	&__item:not(:last-child){margin-right: 20px;}
 }

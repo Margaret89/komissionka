@@ -1,0 +1,61 @@
+/*-------------- form-subcribe -----------------*/
+.form-subcribe{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 38px 123px 30px 92px;
+	background: #fff;
+	box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.1);
+	font-family: $font-literata;
+
+	&__title{
+		max-width: 350px;
+		@include font(normal, 600, rem(30px), 1.2, $color-text);
+		margin-right: 28px;
+		letter-spacing: 0.5px;
+	}
+
+	&__content{
+		display: flex;
+		padding-bottom: 6px;
+	}
+
+	&__field{margin-right: 20px;}
+
+	input[type="text"],
+	input[type="email"]{
+		display: inline-block;
+		height: rem(50px);
+		width: 396px;
+		font-family: $font-site;
+		@include font(normal, 300, rem(16px), rem(48px), $color-text);
+		padding: 0;
+		margin: 0;
+		border: 0;
+		border-bottom: solid 1px #dfdfdf;
+		outline: 0;
+		background: transparent;
+		transition: all 0.2s ease 0s;
+	}
+
+	// input[type="text"]::placeholder,
+	// input[type="email"]::placeholder,
+	// input[type="text"]::-webkit-input-placeholder,
+	// input[type="email"]::-webkit-input-placeholder,
+	// input[type="text"]:-moz-placeholder,
+	// input[type="email"]:-moz-placeholder{
+	// 	color: #929292;
+	// }
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	textarea:focus{
+		border-color: $color-orange;
+	}
+
+	.btn,
+	input[type="submit"].btn,
+	button.btn{
+		min-width: 210px;
+	}
+}

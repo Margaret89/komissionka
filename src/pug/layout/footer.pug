@@ -2,4 +2,73 @@ footer.footer
 	.container
 		.row
 			.col-12
-				|footer
+				.form-subcribe
+					.form-subcribe__title Подписка на e-mail рассылку
+
+					.form-subcribe__content
+						.form-subcribe__field
+							input(type="email", placeholder="Введите Ваш e-mail")
+
+						button.btn.btn_border(type="submit") Подписаться
+
+
+				.footer-info
+					.footer-info__logo
+						a(href="#")
+							img(src="/assets/img/logo-white.svg", alt="")
+
+				
+					ul.footer-menu
+						-
+							var list=[
+								'О нас',
+								'Услуги',
+								'Оплата',
+								'Отзывы',
+								'Возврат',
+								'Дизайнерам',
+								'Акции',
+								'Блог',
+								'Контакты',
+								'Доставка',
+							]
+						each item in list
+							li.footer-menu__item
+								a(href="#").footer-menu__link= item
+
+					.footer-info__action
+						.social-white
+							-
+								var list=[
+									{icon:'ic-instagram', width:'15', height:'15'},
+									{icon:'ic-facebook', width:'7', height:'15'},
+									{icon:'ic-vk', width:'17', height:'9'},
+									{icon:'ic-telegram', width:'15', height:'15'},
+								]
+							each item in list
+								a(href="#").social-white__item
+									+svg(item.icon, item.icon, item.width, item.height)
+
+						.footer-pay
+							.footer-pay__label Мы принимаем:
+
+							.footer-pay__list
+								a(href="#").footer-pay__item
+									img(src="/assets/img/mastercard.png", alt="")
+								a(href="#").footer-pay__item
+									img(src="/assets/img/visa.png", alt="")
+								a(href="#").footer-pay__item
+									img(src="/assets/img/mir.png", alt="")
+
+					.footer-contacts
+						a(href="tel:+78009004541").footer-contacts__phone 8 (800) 900-45-41
+						br
+						a(href="mailto:info-komissionka@gmail.com").footer-contacts__mail info-komissionka@gmail.com
+						.footer-contacts__address СПб, Английский пр, 24
+						.footer-contacts__time Время работы Пн-Вс с 09:00 до 20:00
+
+				.footer-bottom
+					.footer-bottom__copyright © 2020 Все права защищены
+
+					.footer-bottom__polit
+						a(href="#") Политика конфиденциальности

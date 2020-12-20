@@ -9,6 +9,7 @@ $font-literata:  'Literata', Arial, sans-serif;
 // Site
 $color-text: #080808;
 $color-brown: #997552;
+$color-dark-brown: #7c5f41;
 $color-orange: #e5a655;
 $color-dark-orange: #c38c46;
 
@@ -25,5 +26,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1310px
+  xl: 1308px
 ) !default;
+
+$grid-gutter-width: 28px !default;
