@@ -1,0 +1,22 @@
+/*-------------- main-menu -----------------*/
+.main-menu{
+	padding: 12px 0;
+	font-family: $font-literata;
+
+	&__list,
+	&__item{
+		@include reset-list;
+	}
+
+	&__list{display: flex;}
+
+	&__item,
+	&__link{
+		@include font(normal, 500, rem(20px), 1.2, $color-text);
+		text-decoration: none;
+		border-bottom: none;
+	}
+
+	&__item{padding: 0 8px;}
+	&__item:not(:last-child){margin-right: 20px;}
+}

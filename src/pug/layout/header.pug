@@ -1,5 +1,86 @@
 header.header
-	.container
-		.row
-			.col-12
-				| header
+	.header-top
+		.container
+			.row
+				.col-12
+					.header-top__content
+						.header-top__item
+							-
+								var list=[
+									{text:'О нас'},
+									{
+										text:'Услуги',
+										sublist:['parametr 1', 'parametr 2', 'parametr 3', 'parametr 4']
+									},
+									{text:'Оплата'},
+									{
+										text:'Каталог товаров',
+										sublist:['parametr 1', 'parametr 2', 'parametr 3', 'parametr 4']
+									},
+								]
+							ul.top-menu
+								each item in list
+									li.top-menu__item
+										a(href="#").top-menu__link= item.text
+											if(item.sublist)
+												.top-menu__arr
+
+										if(item.sublist)
+											ul.top-menu__sub
+												each subitem in item.sublist
+													li.top-menu__sub-item
+														a(href="#").top-menu__sub-link= subitem
+				
+						.header-top__item
+							-
+								var list=[
+									{text:'Доставка'},
+									{text:'Дизайнерам'},
+									{text:'Акции'},
+									{text:'Блог'},
+									{text:'Контакты'},
+								]
+							ul.top-menu
+								each item in list
+									li.top-menu__item
+										a(href="#").top-menu__link= item.text
+											if(item.sublist)
+												.top-menu__arr
+
+										if(item.sublist)
+											ul.top-menu__sub
+												each subitem in item.sublist
+													li.top-menu__sub-item
+														a(href="#").top-menu__sub-link= subitem
+
+	.header-middle
+		.container
+			.row
+				.col-12
+					.header-middle__content
+						.header-middle__contacts
+							.header-middle__phone
+								a(href="tel:+78009004541") 8 (800) 900-45-41
+
+							.header-middle__mail
+								a(href="mailto:info-komissionka@gmail.com") info-komissionka@gmail.com
+
+						.header-middle__logo
+							a(href="/")
+								img(src="/assets/img/logo.svg", alt="")
+
+						.header-middle__info
+							.header-middle__address СПб, Английский пр, 24
+							.header-middle__time Режим работы: Пн-Вс с 09:00 до 20:00
+
+	nav.main-menu
+		.container
+			.row
+				.col-12
+					ul.main-menu__list
+						-
+							var list=['Мебель', 'Свет', 'Декор', 'Посуда', 'Оборудование для ресторанов', 'Интерьеры', 'Распродажа', 'Текстиль', 'Зеркала']
+						
+						each item in list
+							li.main-menu__item
+								a(href="#").main-menu__link= item
