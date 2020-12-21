@@ -1,13 +1,14 @@
 import {$, Inputmask} from './common';
 
-// $(window).scroll(function(){
-// 	if($(this).scrollTop()>300){
-// 		$('.js-move-up').addClass('visible');
-// 	}else{
-// 		$('.js-move-up').removeClass('visible');
-// 	}
-// });
-// $('.js-move-up').click(function(){$('body,html').animate({scrollTop:0},800);return false;});
+// Стрелка наверх
+$(window).scroll(function(){
+	if($(this).scrollTop()>300){
+		$('.js-move-up').addClass('visible');
+	}else{
+		$('.js-move-up').removeClass('visible');
+	}
+});
+$('.js-move-up').on('click', function(){$('body,html').animate({scrollTop:0},500);return false;});
 
 // Верхний слайдер
 if($('.js-top-slider').length){
