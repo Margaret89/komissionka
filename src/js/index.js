@@ -20,6 +20,17 @@ if($('.js-top-slider').length){
 	});
 }
 
+// Слайдер предложений
+if($('.js-slider-offer').length){
+	$('.js-slider-offer').slick({
+		infinite: false,
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		prevArrow: '<svg class="icon ic-slider-prev" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-prev"></use></svg>',
+		nextArrow: '<svg class="icon ic-slider-next" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-next"></use></svg>',
+	});
+}
+
 // Маска для телефона
 Inputmask('+7 (999) 999-99-99').mask('.js-phone');
 
