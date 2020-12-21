@@ -1,0 +1,44 @@
+/*-------------- action-panel -----------------*/
+.action-panel{
+	background: #fff;
+	padding: 5px 15px;
+	box-shadow: -10px 0px 20px 0px rgba(0, 0, 0, 0.15);
+	position: fixed;
+	@include top-center;
+	right: 0;
+	z-index: 1000;
+
+	&__item{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 20px 0;
+		position: relative;
+		text-decoration: none;
+		border-bottom: none;
+		.icon{
+			fill: #a39e98;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&__item:hover .icon{fill: $color-brown;}
+	&__item:not(:last-child){border-bottom: 1px solid rgba(214,209,200,0.2);}
+	&__item_indent{padding-right: 10px;}
+	&__icon{position: relative;}
+
+	&__count{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border-radius: 50%;
+		background: $color-orange;
+		@include font(normal, 600, rem(14px), 1, #fff);
+		text-align: center;
+		position: absolute;
+		top: -8px;
+		right: -15px;
+	}
+}

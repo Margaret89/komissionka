@@ -3,7 +3,9 @@
 	display: flex;
 
 	&,
-	&__item{
+	&__item,
+	&__sub,
+	&__sub-item{
 		@include reset-list;
 	}
 
@@ -16,8 +18,12 @@
 	}
 
 	&__link:hover{color: $color-orange;}
-	&__item{position: relative;}
 	&__item:not(:last-child){margin-right: 40px;}
+
+	&__item{
+		position: relative;
+		padding: 6px 0 5px;
+	}
 
 	&__arr{
 		display: inline-block;
@@ -28,9 +34,48 @@
 		border-color: $color-brown transparent transparent transparent;
 		margin-left: 5px;
 		position: absolute;
-		top: 7px;
+		@include top-center;
 		right: -14px;
+		transition: all 0.2s ease 0s;
 	}
 
-	&__sub{display: none;}
+	&__link:hover &__arr{border-color: $color-orange transparent transparent transparent;}
+
+	&__sub{
+		display: none;
+		width: 246px;
+		background: #fff;
+		padding: 10px 15px;
+		box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.15);
+		border-top: 3px solid $color-brown;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 10;
+	}
+
+	&__sub::before{
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 6px 6px 6px;
+		border-color: transparent transparent $color-brown transparent;
+		position: absolute;
+		bottom: 100%;
+		left: 20px;
+	}
+
+	&__sub-item,
+	&__sub-link{
+		@include font(normal, 500, rem(16px), 1.2, $color-brown);
+		text-decoration: none;
+		border-bottom: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__sub-link:hover{color: $color-orange;}
+	&__sub-item:not(:last-child){margin-bottom: 10px;}
+	&__item:hover &__sub{display: block;}
 }

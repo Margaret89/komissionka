@@ -10,12 +10,12 @@ header.header
 									{text:'О нас'},
 									{
 										text:'Услуги',
-										sublist:['parametr 1', 'parametr 2', 'parametr 3', 'parametr 4']
+										sublist:['Мастер классы', 'Консалтинг HORECA', 'Реставрация мебели', 'Дизайнерские услуги', 'Аренда декора и мебели']
 									},
 									{text:'Оплата'},
 									{
 										text:'Каталог товаров',
-										sublist:['parametr 1', 'parametr 2', 'parametr 3', 'parametr 4']
+										sublist:['Раздел 1', 'Раздел 2', 'Раздел 3', 'Раздел 4']
 									},
 								]
 							ul.top-menu
@@ -84,3 +84,29 @@ header.header
 						each item in list
 							li.main-menu__item
 								a(href="#").main-menu__link= item
+
+
+.action-panel
+	-
+		var list=[
+			{icon:'ic-basket', width:'25', height:'25', link:'#', count:'0'},
+			{icon:'ic-star', width:'25', height:'25', link:'#', count:'0'},
+			{icon:'ic-search', width:'25', height:'25', link:'#search-popup', fancybox:'true'},
+			{icon:'ic-person', width:'22', height:'25', link:'#auth-popup', fancybox:'true'},
+		]
+
+	each item in list
+		if(item.fancybox)
+			a.action-panel__item(class=item.count?'action-panel__item_indent':'', data-fancybox, data-src=item.link, href='javascript:;')
+				span.action-panel__icon
+					+svg(item.icon, item.icon, item.width, item.height)
+
+					if(item.count)
+						span.action-panel__count= item.count
+		else
+			a.action-panel__item(class=item.count?'action-panel__item_indent':'', href=item.link)
+				span.action-panel__icon
+					+svg(item.icon, item.icon, item.width, item.height)
+
+					if(item.count)
+						span.action-panel__count= item.count
