@@ -1,0 +1,89 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	textarea{
+		display: inline-block;
+		height: rem(50px);
+		width: 100%;
+		font-family: $font-site;
+		@include font(normal, 500, rem(16px), rem(48px), $color-text);
+		padding: 0;
+		margin: 0;
+		border: 0;
+		box-shadow: none;
+		border-bottom: solid 1px #dfdfdf;
+		outline: 0;
+		background: transparent;
+		transition: all 0.2s ease 0s;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder,
+	textarea::placeholder,
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="email"]::-webkit-input-placeholder,
+	input[type="password"]::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder,
+	input[type="text"]:-moz-placeholder,
+	input[type="email"]:-moz-placeholder,
+	input[type="password"]:-moz-placeholder,
+	textarea:-moz-placeholder{
+		font-weight: 300;
+		color: $color-text;
+		opacity: 1;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	textarea:focus{
+		border-color: $color-orange;
+	}
+
+	input[type="text"].error,
+	input[type="email"].error,
+	input[type="password"].error,
+	textarea.error{
+		border-color: #ff0000;
+	}
+
+	&__field_brown{
+		input[type="text"],
+		input[type="email"],
+		input[type="password"],
+		textarea{
+			color: $color-brown;
+		}
+	}
+
+	&__field:not(:last-child){margin-bottom: 12px;}
+
+	&__btn{
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	&__polit{
+		max-width: 320px;
+		margin: 27px auto 38px;
+
+		.input-check{
+			&__mark{
+				flex: 0 0 17px;
+				width: 17px;
+				height: 17px;
+				margin-top: 0;
+			}
+
+			&__text{
+				font-weight: 300;
+				margin-left: 10px;
+			}
+		}
+	}
+}
+
+.auth-confirm{display: none;}

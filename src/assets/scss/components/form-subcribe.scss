@@ -28,29 +28,36 @@
 		height: rem(50px);
 		width: 396px;
 		font-family: $font-site;
-		@include font(normal, 300, rem(16px), rem(48px), $color-text);
+		@include font(normal, 500, rem(16px), rem(48px), $color-text);
 		padding: 0;
 		margin: 0;
 		border: 0;
+		box-shadow: none;
 		border-bottom: solid 1px #dfdfdf;
 		outline: 0;
 		background: transparent;
 		transition: all 0.2s ease 0s;
 	}
 
-	// input[type="text"]::placeholder,
-	// input[type="email"]::placeholder,
-	// input[type="text"]::-webkit-input-placeholder,
-	// input[type="email"]::-webkit-input-placeholder,
-	// input[type="text"]:-moz-placeholder,
-	// input[type="email"]:-moz-placeholder{
-	// 	color: #929292;
-	// }
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="email"]::-webkit-input-placeholder,
+	input[type="text"]:-moz-placeholder,
+	input[type="email"]:-moz-placeholder{
+		font-weight: 300;
+		opacity: 1;
+	}
 
 	input[type="text"]:focus,
 	input[type="email"]:focus,
 	textarea:focus{
 		border-color: $color-orange;
+	}
+
+	input[type="text"].error,
+	input[type="email"].error{
+		border-color: #ff0000;
 	}
 
 	.btn,

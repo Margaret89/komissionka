@@ -92,12 +92,12 @@ header.header
 			{icon:'ic-basket', width:'25', height:'25', link:'#', count:'0'},
 			{icon:'ic-star', width:'25', height:'25', link:'#', count:'0'},
 			{icon:'ic-search', width:'25', height:'25', link:'#search-popup', fancybox:'true'},
-			{icon:'ic-person', width:'22', height:'25', link:'#auth-popup', fancybox:'true'},
+			{icon:'ic-person', width:'22', height:'25', link:'#auth-popup', fancybox:'true', class:'js-btn-auth-popup'},
 		]
 
 	each item in list
 		if(item.fancybox)
-			a.action-panel__item(class=item.count?'action-panel__item_indent':'', data-fancybox, data-src=item.link, href='javascript:;')
+			a.action-panel__item(class=item.count?'action-panel__item_indent':'', class=item.class?item.class:'', data-fancybox, data-src=item.link, href='javascript:;')
 				span.action-panel__icon
 					+svg(item.icon, item.icon, item.width, item.height)
 

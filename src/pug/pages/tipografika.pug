@@ -57,10 +57,23 @@ block content
 				br
 				br
 				div.h2 Кнопки
-				a.btn(href='#') Кнопка
+				a.btn(href='#')
+					span.btn__text Кнопка
 				br
 				br
-				a.btn.btn_border(href='#') Кнопка
+				a.btn.btn_border(href='#')
+					span.btn__text Кнопка
+
+				br
+				br
+				.h2 Нестандартный checkbox
+				.input-check
+					input#checkbox1(type='checkbox', checked='checked')
+					label.input-check__label(for='checkbox1')
+						span.input-check__mark
+							
+						span.input-check__text label
+
 
 				br
 				br

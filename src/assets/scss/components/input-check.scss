@@ -1,0 +1,46 @@
+/*-------------- input-check -----------------*/
+.input-check{
+	&__label{
+		display: inline-flex;
+		vertical-align: middle;
+		cursor: pointer;
+		position: relative;
+	}
+
+	input[type=checkbox]{display: none;}
+
+	&__mark{
+		flex: 0 0 18px;
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		border: 1px solid #dfdfdf;
+		background: #fff;
+		margin-top: -2px;
+		position: relative;
+	}
+
+	&__mark::after{
+		content: '';
+		display: none;
+		vertical-align: top;
+		width: 6px;
+		height: 6px;
+		background: $color-text;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0 auto;
+	}
+
+	&__text{
+		max-width: calc(100% - 38px);
+		@include font(normal, 500, rem(16px), 1.1, $color-text);
+		margin-left: 20px;
+
+		a{color: $color-brown;}
+	}
+
+	input[type=checkbox]:checked + &__label &__mark::after{display: inline-block;}
+}

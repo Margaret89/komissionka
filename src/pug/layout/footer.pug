@@ -2,14 +2,15 @@ footer.footer
 	.container
 		.row
 			.col-12
-				.form-subcribe
+				form.form-subcribe
 					.form-subcribe__title Подписка на e-mail рассылку
 
 					.form-subcribe__content
 						.form-subcribe__field
-							input(type="email", placeholder="Введите Ваш e-mail")
+							input(type="email", placeholder="Введите Ваш e-mail", required="required")
 
-						button.btn.btn_border(type="submit") Подписаться
+						button.btn.btn_border(type="submit")
+							span.btn__text Подписаться
 
 
 				.footer-info
@@ -72,3 +73,50 @@ footer.footer
 
 					.footer-bottom__polit
 						a(href="#") Политика конфиденциальности
+
+.popup#search-popup
+	.popup__content
+		.h2 Поиск по сайту
+
+		.popup__main
+			form.form-search
+				input(type='text', placeholder='Поиск по сайту', required='required')
+				button(type='submit')
+					+svg('ic-search','ic-search', '24', '24')
+
+.popup#auth-popup
+	.popup__content
+		.h2 Авторизация / регистрация
+
+		.popup__main
+			.auth-form.js-auth-form
+				form.form-site
+					.form-site__content
+						.form-site__field
+							input(type='text', placeholder='Телефон', required='required', class="js-phone")
+
+					.form-site__btn
+						button.btn.btn_border(type='submit')
+							span.btn__text Получить смс
+
+
+			.auth-confirm.js-auth-confirm
+				form.form-site
+					.form-site__content
+						.form-site__field.form-site__field_brown
+							input(type='text', disabled='disabled', class="js-phone")
+
+						.form-site__field
+							input(type='text', placeholder='Код который пришел в sms', required='required')
+
+					.form-site__polit
+						.input-check
+							input#polit(type='checkbox', checked='checked', required='required')
+							label.input-check__label(for='polit')
+								span.input-check__mark
+									
+								span.input-check__text Я даю согласия с Политикой обработки персональных данных
+
+					.form-site__btn
+						button.btn.btn_border(type='submit')
+							span.btn__text Войти / зарегистрироваться

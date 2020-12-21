@@ -1,6 +1,9 @@
 /*-------------- top-slider -----------------*/
 .top-slider{
+	display: none;
 	padding:0 40px;
+
+	&.slick-initialized{display: block;}
 
 	&__item{
 		min-height: 436px;

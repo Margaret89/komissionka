@@ -1,0 +1,68 @@
+/*-------------- form-search -----------------*/
+.form-search{
+	position: relative;
+
+	input[type="text"],
+	input[type="search"]{
+		display: inline-block;
+		height: rem(50px);
+		width: 100%;
+		font-family: $font-site;
+		@include font(normal, 500, rem(16px), rem(48px), $color-text);
+		padding: 0 30px 0 0;
+		margin: 0;
+		border: 0;
+		border-bottom: solid 1px #dfdfdf;
+		outline: 0;
+		box-shadow: none;
+		background: transparent;
+		transition: all 0.2s ease 0s;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="search"]::placeholder,
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="search"]::-webkit-input-placeholder,
+	input[type="text"]:-moz-placeholder,
+	input[type="search"]:-moz-placeholder{
+		font-weight: 300;
+		opacity: 1;
+	}
+
+	input[type="text"]:focus,
+	input[type="search"]:focus{
+		border-color: $color-orange;
+	}
+
+	input[type="text"].error,
+	input[type="search"].error{
+		border-color: #ff0000;
+	}
+
+	input[type="submit"],
+	button{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		border: 0;
+		outline: 0;
+		padding: 0;
+		margin: 0;
+		font-size: 0;
+		box-shadow: none;
+		background: none;
+		position: absolute;
+		@include top-center;
+		right: 0;
+		cursor: pointer;
+	}
+
+	button .icon{
+		fill: #a39e98;
+		transition: all 0.2s ease 0s;
+	}
+
+	button:hover .icon{fill: $color-brown;}
+}
