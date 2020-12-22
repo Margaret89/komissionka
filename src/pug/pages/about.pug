@@ -1,0 +1,73 @@
+extends ../layout/main
+
+block variables
+	- var title = 'О нас';
+	- var h1 = 'О нас';
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная'},
+			{href:'#',name:'О нас'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	include ../components/about
+
+	section.advant
+		.container
+			.row
+				-
+					var list=[
+						{icon:'ic-hands', width:'52', height:'52', text:'В производстве мы используем только натуральные масла и краски, поэтому наша мебель безопасна для человека и окружающей среды'},
+						{icon:'ic-certificate', width:'50', height:'43', text:'Вся мебель имеет сертификаты качества и прозводится в собственном хорошо оборудованном цехе на частной производственной площадке.'},
+						{icon:'ic-medal', width:'39', height:'48', text:'Наша сила в комбинации красивого дизайна, взвешенных решений и целостного подхода к качеству: от процесса производства до послепродажного обслуживания.'},
+						{icon:'ic-quality', width:'37', height:'48', text:'Качество в деталях — философия мастерской. Высокое качество мебели  — результат тщательной проверки выбора сырья и безостановочного контроля каждой детали.'},
+					]
+
+				each item in list
+					.col-3
+						.advant__item
+							.advant__icon
+								+svg(item.icon, item.icon, item.width, item.height)
+
+							.advant__text= item.text
+
+	section.feedback-form.last-elem
+		.container
+			.row
+				.col-12
+					.feedback-form__content
+						.row
+							.col-8.offset-4
+								form.form-site.form-site_hor
+									.form-site__head Форма обратной связи
+
+									.form-site__content
+										.form-site__col
+											.form-site__field
+												input(type='text', placeholder='Имя', required='required')
+
+											.form-site__field
+												input(type='text', placeholder='Телефон' , class="js-phone", required='required')
+
+											.form-site__field
+												input(type='email', placeholder='E-mail')
+
+										.form-site__col
+											.form-site__field.form-site__field_full
+												textarea(placeholder='Текст сообщения')
+
+									.form-site__polit
+										.input-check
+											input#polit2(type='checkbox', checked='checked', required='required')
+											label.input-check__label(for='polit2')
+												span.input-check__mark
+													
+												span.input-check__text Я даю согласия с Политикой обработки персональных данных
+
+									.form-site__btn
+										button.btn.btn_border(type='submit')
+											span.btn__text Отправить

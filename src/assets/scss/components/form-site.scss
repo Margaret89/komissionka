@@ -19,6 +19,12 @@
 		transition: all 0.2s ease 0s;
 	}
 
+	textarea{
+		height: 120px;
+		line-height: 1.2;
+		padding: 15px 0;
+	}
+
 	input[type="text"]::placeholder,
 	input[type="email"]::placeholder,
 	input[type="password"]::placeholder,
@@ -50,6 +56,14 @@
 		border-color: #ff0000;
 	}
 
+	&__head{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(40px), 1.2, $color-text);
+		letter-spacing: 0.6px;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
 	&__field_brown{
 		input[type="text"],
 		input[type="email"],
@@ -71,19 +85,44 @@
 		margin: 27px auto 38px;
 
 		.input-check{
-			&__mark{
-				flex: 0 0 17px;
-				width: 17px;
-				height: 17px;
-				margin-top: 0;
-			}
-
 			&__text{
 				font-weight: 300;
 				margin-left: 10px;
 			}
 		}
 	}
+
+	&_hor &__content{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__col{width: calc(50% - 14px);}
+	&__col &__field:not(:last-child){margin-bottom: 21px;}
+
+	&__field_full,
+	&__field_full textarea{
+		height: 100%;
+	}
 }
 
 .auth-confirm{display: none;}
+
+.feedback-form{
+	background: #f3f2ef;
+
+	&__content{
+		padding: 58px 0 40px;
+		background: url(/assets/img/wood.png) no-repeat top left;
+	}
+
+	.form-site{
+		&__polit{
+			display: flex;
+			justify-content: center;
+			max-width: none;
+
+			.input-check__text{max-width: none;}
+		}
+	}
+}

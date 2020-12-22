@@ -1,0 +1,40 @@
+/*-------------- breadcrumb -----------------*/
+.breadcrumb{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	border-top: 1px solid #efeeeb;
+
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&{padding: 16px 0 23px;}
+
+	&__item{
+		@include font(normal, 500, rem(16px), 1.2, $color-text);
+		margin-top: 5px;
+		margin-bottom: 5px;
+		position: relative;
+
+		a{
+			text-decoration: none;
+			border-bottom: none;
+		}
+
+		a:hover{text-decoration: underline;}
+	}
+
+	&__item:not(:last-child){margin-right: 20px;}
+
+	&__item:not(:last-child):after{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 5px;
+		height: 5px;
+		background: $color-brown;
+		margin-left: 20px;
+	}
+}
