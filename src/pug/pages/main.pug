@@ -105,7 +105,7 @@ block content
 					.services
 						-
 							var list=[
-								{icon:'ic-master-class', width:'53', height:'53', text:'Мастер классы'},
+								{icon:'ic-master-class', width:'53', height:'53', text:'Мастер<br>классы'},
 								{icon:'ic-consulting', width:'50', height:'50', text:'Консалтинг HORECA'},
 								{icon:'ic-restoration', width:'68', height:'48', text:'Реставрация мебели'},
 								{icon:'ic-design', width:'47', height:'47', text:'Дизайнерские услуги'},
@@ -124,3 +124,30 @@ block content
 					.services-wrap__more
 						a(href="#").btn.btn_border
 							span.btn__text Показать все услуги
+
+
+	section.news-wrap
+		.container
+			.row
+				.col-12
+					.h1 Последние новости
+
+		.news-list
+			.container
+				.row
+					-
+						var list=[
+							{img:'news1.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
+							{img:'news2.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
+							{img:'news3.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
+						]
+					each item in list
+						.col-4
+							.news-list__item
+								a(href="#").news-list__img-wrap
+									span.news-list__img(style="background-image: url(/assets/img/"+item.img+")")
+
+								.news-list__title
+									a(href="#")= item.title
+
+								.news-list__text= item.text

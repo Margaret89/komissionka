@@ -1,0 +1,49 @@
+/*-------------- news-list -----------------*/
+.news-wrap{
+	h1, .h1{text-align: center;}
+}
+
+.news-list{
+	&__img-wrap{
+		display: block;
+		width: 100%;
+		height: 270px;
+		position: relative;
+		overflow: hidden;
+		margin-bottom: 16px;
+		text-decoration: none;
+		border-bottom: none;
+	}
+
+	&__img{
+		display: block;
+		width: 100%;
+		height: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: all 0.2s ease 0s;
+	}
+
+	&__img-wrap:hover &__img{scale: 1.05;}
+
+	&__title,
+	&__title a{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(18px), 1.2, $color-brown);
+		letter-spacing: 0.4px;
+		text-decoration: none;
+		border-bottom: none;
+	}
+
+	&__title{margin-bottom: 12px;}
+	&__title a:hover{text-decoration: underline;}
+
+	&__text{
+		@include font(normal, 300, rem(16px), 1.2, $color-text);
+	}
+}
