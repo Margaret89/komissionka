@@ -97,3 +97,30 @@ block content
 										if(item.old_price)
 											span.slider-offer__old-price= item.old_price
 										span.slider-offer__cur-price= item.price
+
+	section.services-wrap.bg-grey
+		.container
+			.row
+				.col-12
+					.services
+						-
+							var list=[
+								{icon:'ic-master-class', width:'53', height:'53', text:'Мастер классы'},
+								{icon:'ic-consulting', width:'50', height:'50', text:'Консалтинг HORECA'},
+								{icon:'ic-restoration', width:'68', height:'48', text:'Реставрация мебели'},
+								{icon:'ic-design', width:'47', height:'47', text:'Дизайнерские услуги'},
+								{icon:'ic-calendar', width:'40', height:'40', text:'Расписание на фотосессии в интерьере'},
+							]
+
+						each item in list
+							.services__item
+								a(href="#").services__icon
+									+svg(item.icon, item.icon, item.width, item.height)
+
+								.services__text
+									a(href="#")= item.text
+
+
+					.services-wrap__more
+						a(href="#").btn.btn_border
+							span.btn__text Показать все услуги
