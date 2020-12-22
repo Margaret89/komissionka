@@ -1,9 +1,13 @@
 /*-------------- news-list -----------------*/
 .news-wrap{
+	margin: 14px 0;
+	
 	h1, .h1{text-align: center;}
 }
 
 .news-list{
+	&__item{margin-bottom: 30px;}
+
 	&__img-wrap{
 		display: block;
 		width: 100%;

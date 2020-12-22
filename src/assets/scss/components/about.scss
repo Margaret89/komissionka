@@ -1,0 +1,29 @@
+/*-------------- about -----------------*/
+.about{
+	margin: 40px 0;
+	overflow: hidden;
+
+	&__img{
+		padding: 97px 0;
+		text-align: right;
+		position: relative;
+		margin-right: -180px;
+
+		img{position: relative;}
+	}
+
+	&__img::before{
+		content: '';
+		display: inline-block;
+		width: 1500px;
+		height: 100%;
+		background: #f3f2ef;
+		position: absolute;
+		top: 0;
+		left: 45%;
+	}
+
+	&__text{
+		p:last-child{margin-bottom: 0;}
+	}
+}
