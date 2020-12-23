@@ -1,0 +1,35 @@
+/*-------------- scrollbar -----------------*/
+.scroll-content{
+	max-height: 200px;
+	position: relative;
+	overflow: hidden;
+}
+
+.ps__rail-y{
+	width: 3px;
+	opacity: 1;
+	background: rgba(39,25,14,0.1);
+	opacity: 1;
+}
+
+.ps--active-y > .ps__rail-y{
+	background: rgba(39,25,14,0.1);
+	opacity: 1;
+}
+
+.ps__thumb-y{
+	width: 3px;
+	background: $color-orange;
+	border-radius: 0;
+	right: 0;
+	transition: width .5s ease 0s;
+}
+
+.ps__rail-y:hover{width: 3px;}
+
+.ps__rail-y:hover > .ps__thumb-y,
+.ps__rail-y:focus > .ps__thumb-y,
+.ps__rail-y.ps--clicking .ps__thumb-y{
+	width: 3px;
+	background-color: $color-orange;
+}

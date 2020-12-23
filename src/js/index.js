@@ -1,4 +1,5 @@
-import {$, Inputmask, SimpleScrollbar} from './common';
+import { each } from 'jquery';
+import {$, Inputmask, PerfectScrollbar, noUiSlider} from './common';
 
 // Стрелка наверх
 $(window).on('scroll', function(){
@@ -61,3 +62,72 @@ $(".js-btn-auth-popup").fancybox({
 		$('.js-auth-form').css('display', 'block');
 	}
 });
+
+// Стилизация скролбара
+if($('.js-scroll-content').length){
+	$('.js-scroll-content').each(function(indx, element){
+		const ps = new PerfectScrollbar(element);
+	});
+}
+
+// Открыть/Закрыть пункты фильтра
+$('.js-filter-head').on('click', function(){
+	$(this).siblings('.js-filter-info').slideToggle('300');
+	$(this).parents('.js-filter-sect').toggleClass('open')
+});
+
+// range-slider
+if($('.js-slider-range').length){
+	var slider = document.getElementById('slider-range');
+	var minRange = Number(slider.getAttribute('data-min'));
+	var maxRange = Number(slider.getAttribute('data-max'));
+	
+	noUiSlider.create(slider, {
+		start: [minRange, maxRange],
+		step: 5,
+		connect: true,
+		range: {
+			'min': minRange,
+			'max': maxRange
+		},
+		tooltips: true,
+		format: {
+			from: Number,
+			to: function(value) {
+				return (parseInt(value).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")+" руб.");
+			}
+		}
+	});
+
+
+	var snapValues = [
+		document.getElementById('slider-range-min'),
+		document.getElementById('slider-range-max')
+	];
+
+	slider.noUiSlider.on('update', function (values, handle) {
+		snapValues[handle].value = values[handle];
+	});
+
+	snapValues.forEach(function (input, handle) {
+		input.addEventListener('change', function () {
+			var valItem = Number(this.value.replace(/\D+/g,""));;
+			var minValItem = Number(snapValues[0].value.replace(/\D+/g,""));
+			var maxValItem = Number(snapValues[1].value.replace(/\D+/g,""));
+			// var valItem = this.value;
+			// var minValItem = Number(snapValues[0].value);
+			// var maxValItem = Number(snapValues[1].value);
+
+			if(handle == 0){
+				if((valItem < minRange) || (valItem > maxRange) || (valItem >= maxValItem)){
+					valItem = minRange;
+				}
+			}else{
+				if((valItem < minRange) || (valItem > maxRange) || (valItem <= minValItem)){
+					valItem = maxRange;
+				}
+			}
+			slider.noUiSlider.setHandle(handle, valItem);
+		});
+	});
+}

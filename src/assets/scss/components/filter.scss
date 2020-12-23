@@ -43,14 +43,85 @@
 
 	&__info{
 		display: none;
-		padding: 0 20px 20px;
+		padding: 0 20px;
 	}
 
 	&__sect.open &__info{display: block;}
-	&__param:not(:last-child){margin-bottom: 15px;}
+
+	&__param{
+		margin-bottom: 15px;
+
+		.input-check{
+			&__mark{margin-top: 0;}
+			&__text{padding-top: 2px;}
+		}
+	}
 
 	&__list{
 		max-height: 326px;
-		padding-top: 2px;
+		position: relative;
+		overflow: hidden;
 	}
 }
+
+.range{
+	margin-top: 8px;
+	margin-bottom: 20px;
+
+	&__fields{
+		display: flex;
+		justify-content: space-between;
+		margin-top: 43px;
+
+		input[type="text"]{
+			display: inline-block;
+			height: rem(40px);
+			width: calc(50% - 10px);
+			font-family: $font-site;
+			@include font(normal, 500, rem(16px), rem(38px), #b2b2b2);
+			padding: 0 12px;
+			margin: 0;
+			border: 1px solid #dfdfdf;
+			box-shadow: none;
+			outline: 0;
+			background: transparent;
+			transition: all 0.2s ease 0s;
+		}
+
+		input[type="text"]:focus{border-color: $color-orange;}
+		input[type="text"].error{border-color: #ff0000;}
+	}
+}
+
+.noUi-horizontal{height: 2px;}
+.noUi-connect{background: $color-brown;}
+
+.noUi-target{
+	border: 0;
+	background: #dcdcdc;
+	box-shadow: none;
+}
+
+
+.noUi-horizontal .noUi-handle{
+	width: 10px;
+	height: 10px;
+	background: $color-brown;
+	border: 2px solid #fff;
+	box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.23);
+	right: -5px;
+	top: -4px;
+}
+
+.noUi-handle::after, .noUi-handle::before{display: none;}
+
+.noUi-horizontal .noUi-tooltip{
+	@include font(normal, 500, rem(16px), 1, #b2b2b2);
+	border: 0;
+	padding: 0;
+	top: 100%;
+	margin-top: 15px;
+	bottom: auto;
+}
+
+.noUi-handle.noUi-active{z-index: 10;}

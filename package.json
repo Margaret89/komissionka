@@ -66,9 +66,10 @@
     "bootstrap": "^4.5.3",
     "inputmask": "^4.0.9",
     "jquery": "^3.5.1",
+    "nouislider": "^14.6.3",
+    "perfect-scrollbar": "^1.5.0",
     "sass-rem": "^2.0.1",
     "select2": "^4.0.13",
-    "simple-scrollbar": "^0.4.0",
     "slick-slider": "^1.8.2"
   }
 }

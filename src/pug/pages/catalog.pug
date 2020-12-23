@@ -89,7 +89,6 @@ block content
 									},
 									{
 										title:'Материал',
-										status:'open',
 										params:[
 											'Ткань',
 											'Дерево',
@@ -127,7 +126,7 @@ block content
 									
 								]
 							
-							each sect in list
+							each sect, num in list
 								.filter__sect.js-filter-sect(class=sect.status=='open'?'open':'')
 									.filter__head.js-filter-head= sect.title
 										.filter__arr
@@ -136,13 +135,13 @@ block content
 										if(sect.range)
 											.range
 												.range__slider
-													#slider-range.js-slider-range(data-min="0", data-max="100", autocomplete="off")
+													#slider-range.js-slider-range(data-min="0", data-max="60000", autocomplete="off")
 
 												.range__fields
 													input#slider-range-min.js-slider-range-min(type="text", placeholder="0 руб.", autocomplete="off")
 													input#slider-range-max.js-slider-range-max(type="text", placeholder="60 000 руб.", autocomplete="off")
 										else
-											.filter__list(ss-container)
+											.filter__list.js-scroll-content
 												each param, index in sect.params
 													.filter__param
 														.input-check
