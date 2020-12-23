@@ -1,7 +1,7 @@
-import {$, Inputmask} from './common';
+import {$, Inputmask, SimpleScrollbar} from './common';
 
 // Стрелка наверх
-$(window).scroll(function(){
+$(window).on('scroll', function(){
 	if($(this).scrollTop()>300){
 		$('.js-move-up').addClass('visible');
 	}else{
@@ -55,7 +55,6 @@ if($('.js-auth-form').length){
 
 $(".js-btn-auth-popup").fancybox({
 	'afterClose'  : function() {
-		console.log('22222');
 		$('.js-auth-confirm form')[0].reset();
 		$('.js-auth-form form')[0].reset();
 		$('.js-auth-confirm').css('display', 'none');

@@ -68,6 +68,7 @@
     "jquery": "^3.5.1",
     "sass-rem": "^2.0.1",
     "select2": "^4.0.13",
+    "simple-scrollbar": "^0.4.0",
     "slick-slider": "^1.8.2"
   }
 }

@@ -52,16 +52,18 @@ block content
 
 						ul.catalog-menu
 							each item in list
-								li.catalog-menu__item
-									a(href="#").catalog-menu__link(class=item.sub?'active':'')= item.text
+								li.catalog-menu__item(class=item.sub?'active':'')
+									a(href="#").catalog-menu__link= item.text
+										|&nbsp;
 										span.catalog-menu__count= item.count
 
 									if(item.sub)
 										ul.catalog-menu__sub
 											each sub in item.sub
 												li.catalog-menu__item
-													a(href="#").catalog-menu__link= item.text
-														span.catalog-menu__count= item.count
+													a(href="#").catalog-menu__link= sub.text
+														|&nbsp;
+														span.catalog-menu__count= sub.count
 
 
 					.filter
@@ -87,6 +89,7 @@ block content
 									},
 									{
 										title:'Материал',
+										status:'open',
 										params:[
 											'Ткань',
 											'Дерево',
@@ -126,27 +129,27 @@ block content
 							
 							each sect in list
 								.filter__sect.js-filter-sect(class=sect.status=='open'?'open':'')
-									.filter__title.js-filter-title= sect.title
+									.filter__head.js-filter-head= sect.title
 										.filter__arr
 
-								.filter__info.js-filter-info
-									if(sect.range)
-										.range
-											.range__slider
-												#slider-range.js-slider-range(data-min="0", data-max="100", autocomplete="off")
+									.filter__info.js-filter-info
+										if(sect.range)
+											.range
+												.range__slider
+													#slider-range.js-slider-range(data-min="0", data-max="100", autocomplete="off")
 
-											.range__fields
-												input#slider-range-min.js-slider-range-min(type="text", placeholder="0 руб.", autocomplete="off")
-												input#slider-range-max.js-slider-range-max(type="text", placeholder="60 000 руб.", autocomplete="off")
-									else
-										.filter__list
-											each param, index in sect.params
-												.filter__param
-													.input-check
-														input(type='checkbox',id='checkbox'+num+index)
-														label.input-check__label(for='checkbox'+num+index)
-															span.input-check__mark
-															span.input-check__text= param
+												.range__fields
+													input#slider-range-min.js-slider-range-min(type="text", placeholder="0 руб.", autocomplete="off")
+													input#slider-range-max.js-slider-range-max(type="text", placeholder="60 000 руб.", autocomplete="off")
+										else
+											.filter__list(ss-container)
+												each param, index in sect.params
+													.filter__param
+														.input-check
+															input(type='checkbox',id='checkbox'+num+index)
+															label.input-check__label(for='checkbox'+num+index)
+																span.input-check__mark
+																span.input-check__text= param
 
 										
 

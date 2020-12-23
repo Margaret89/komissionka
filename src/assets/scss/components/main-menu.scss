@@ -1,14 +1,17 @@
 /*-------------- main-menu -----------------*/
 .main-menu{
-	padding: 12px 0 15px;
 	font-family: $font-literata;
 
 	&__list,
 	&__item{
 		@include reset-list;
+		border-bottom: 1px solid #efeeeb;
 	}
 
-	&__list{display: flex;}
+	&__list{
+		display: flex;
+		padding: 12px 0 15px;
+	}
 
 	&__item,
 	&__link{

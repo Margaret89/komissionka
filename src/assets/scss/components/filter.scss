@@ -1,0 +1,56 @@
+/*-------------- filter -----------------*/
+.filter{
+	border: 1px solid #ecedee;
+
+	&__title{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(25px), 1.2, $color-text);
+		letter-spacing: 0.3px;
+		padding: 10px 20px 15px;
+	}
+
+	&__sect:not(:last-child){border-bottom: 1px solid #ecedee;}
+
+	&__head{
+		@include font(normal, bold, rem(20px), 1.2, $color-text);
+		padding: 15px 40px 15px 20px;
+		position: relative;
+		transition: all 0.2s ease 0s;
+		cursor: pointer;
+	}
+
+	&__arr{
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6px 6px 0 6px;
+		border-color: $color-text transparent transparent transparent;
+		position: absolute;
+		top: 23px;
+		right: 20px;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__sect.open &__arr{
+		border-width: 0 6px 6px 6px;
+		border-color: transparent transparent #b2b2b2 transparent;
+	}
+
+	&__head:hover{color: $color-brown;}
+	&__head:hover &__arr{border-color: $color-brown transparent transparent transparent;}
+	&__sect.open &__head:hover &__arr{border-color: transparent transparent $color-brown transparent;}
+
+	&__info{
+		display: none;
+		padding: 0 20px 20px;
+	}
+
+	&__sect.open &__info{display: block;}
+	&__param:not(:last-child){margin-bottom: 15px;}
+
+	&__list{
+		max-height: 326px;
+		padding-top: 2px;
+	}
+}
