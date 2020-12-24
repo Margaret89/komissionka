@@ -1,0 +1,167 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Каталог детальная';
+
+block breadcrumb
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Мебель'},
+						{href:'#',name:'Стулья'},
+						{href:'#',name:'Стул Lars серый'},
+					];
+
+				+breadcrumbs(breadcrumbs)
+
+block content
+	.catalog-detail-wrap
+		section.catalog-detail
+			.container
+				.catalog-detail__main
+					.row
+						.col-6
+							.product-slider
+								ul.product-slider-thumb.js-product-slider-thumb
+									-
+										var list=[
+											'product-slider2.jpg',
+											'product-slider1.jpg',
+											'product-slider3.jpg',
+											'product-slider4.jpg',
+											'product-slider5.jpg',
+											'product-slider6.jpg',
+											'product-slider7.jpg',
+											'product-slider8.jpg',
+										]
+									each item in list
+										li.product-slider-thumb__item
+											img(src='/assets/img/'+item alt='')
+									
+
+								ul.product-slider-preview.js-product-slider-preview
+										-
+											var list=[
+												'product-slider-big2.jpg',
+												'product-slider-big1.jpg',
+												'product-slider-big3.jpg',
+												'product-slider-big4.jpg',
+												'product-slider-big5.jpg',
+												'product-slider-big6.jpg',
+												'product-slider-big7.jpg',
+												'product-slider-big8.jpg',
+											]
+
+										each item in list
+											li.product-slider-preview__item
+												a(href='/assets/img/'+item data-fancybox='')
+													img(src='/assets/img/'+item alt='')
+											
+								
+
+						.col-6
+							.catalog-detail__info
+								h1 Стул Lars серый
+
+								.catalog-detail__article-wrap
+									.catalog-detail__article Код товара: 10058
+									.catalog-detail__sticker new
+		
+								.catalog-detail__price
+									span.catalog-detail__old-price 15 900 руб.
+									span.catalog-detail__cur-price 10 390 руб.
+
+								.catalog-detail__action
+									a(href="#").btn.btn_small
+										span.btn__text Заказать
+
+									a(href="#").btn-star
+										+svg('ic-star','ic-star', '25', '25')
+
+									a(href="#").catalog-detail__click Купить в 1 клик
+
+								.catalog-params
+									-
+										var list=[
+											{label:'Бренд:', text:'La Forma (ex Julia Grup)'},
+											{label:'Ширина (см):', text:'48'},
+											{label:'Высота (см):', text:'82'},
+											{label:'Глубина (см):', text:'56'},
+											{label:'Материал:', text:'массив дерева, полипропилен, экокожа'},
+											{label:'Цвет:', text:'серый, натуральный'},
+											{label:'Стиль:', text:'cкандинавский, современный'},
+											{label:'Страна:', text:'Испания'},
+											{label:'Сборка:', text:'требуется'},
+										]
+
+									each item in list
+										.catalog-params__item
+											span.catalog-params__label= item.label
+											| 
+											span.catalog-params__val= item.text
+
+									.catalog-params__item
+										.catalog-params__label Цвет:
+
+										.catalog-params__val
+											.choose-param
+												-
+													var list=[
+														{color:'#f4e06c',},
+														{color:'#acb0b4', status:'active'},
+														{color:'#f5f5f5',},
+														{color:'#b4080b',},
+														{color:'#2a2a2c',},
+													]
+
+												each item, index in list
+													.check-color
+														if(item.status)
+															input(type='radio', checked='checked', id='radiocolor'+index, name='color')
+														else
+															input(type='radio' id='radiocolor'+index, name='color')
+														label.check-color__label(for='radiocolor'+index)
+															span.check-color__mark(style='background:'+item.color)
+
+				.catalog-detail__desc
+					.row
+						.col-12
+							.cat-detail-sect
+								.cat-detail-sect__title Описание:
+
+								.cat-detail-sect__content
+									p Чем хорош стул Lars от испанской фабрики La Forma? Всем. Но этого мало. Тогда по порядку: оригинальный дизайн, каркас из массива бука, удобная подушка в цвет сиденья. Отлично впишется в современный интерьер со скандинавскими нотками. В интернет-магазине KOMISSIONKA вы найдёте подлинную дизайнерскую мебель и предметы интерьера от российских и европейских мебельных фабрик. Активно сотрудничаем с дизайнерами и компаниями. Посетите шоу-рум в Москве и лично убедитесь в качестве изделий.
+					
+					.row
+						.col-12
+							.cat-detail-sect
+								.cat-detail-sect__title Доставка:
+
+								.cat-detail-sect__content
+									p Москва и область:*
+									p малогабаритные товары — <b>от 400 руб.</b> (подъём бесплатно);
+									p среднегабаритные — <b>от 800 руб.</b> (+400 руб.  подъём);
+									p крупногабаритные — <b>от 1 600 руб.</b> (+800 руб. подъём);
+									p прочая мебель — <b>от 2 800 руб.</b> (+1-2% подъём от общей стоимости заказа).
+									p Малогабаритными считаются товары или группы товаров, размер которых в упаковке не превышает 150 см по трём сторонам или 100 см по одной из сторон (светильники, текстиль, декор). Среднегабаритными товарами считаются пуфы, вешалки, стулья и табуреты, столики, зеркала. Крупногабаритными считаются ТВ-тумбы, стеллажи, шкафы. К прочей мебели относятся сборные грузы и товары, которые помещаются только в грузовые автомобили и требуют 2-х грузчиков для подъёма. Доставка осуществляется только после 100% предоплаты заказа.
+									p * Ориентировочная стоимость доставки указана на странице«Доставка и оплата». Точную стоимость уточняйте у менеджера. Доставка осуществляется по всей России, стоимость указана для Москвы. Доставка за МКАД осуществляется по тарифу +50 руб. / км.
+
+
+		section.slider-offer.bg-grey
+			.container
+				.row
+					.col-12
+						.h1 Похожие товары
+
+						+catalog-slider()
+		
+		section.slider-offer
+			.container
+				.row
+					.col-12
+						.h1 Другие товары из коллекции
+
+						+catalog-slider()

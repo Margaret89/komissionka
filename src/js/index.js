@@ -142,3 +142,52 @@ if ($('.js-select').length) {
 		},
 	});
 }
+
+// Слайдер для продукции
+$('.js-product-slider-thumb').slick({
+	autoplay: false,
+	vertical: true,
+	infinite: false,
+	verticalSwiping: true,
+	slidesPerRow: 1,
+	slidesToShow: 4,
+	asNavFor: '.js-product-slider-preview',
+	focusOnSelect: true,
+	prevArrow: '<button type="button" class="slick-prev"><svg class="icon ic-arrow-fill-up" width="34" height="19"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-fill-up"></use></svg></button>',
+	nextArrow: '<button type="button" class="slick-next"><svg class="icon ic-arrow-fill-down" width="34" height="19"><use xlink:href="assets/sprites/sprite.svg#ic-arrow-fill-down"></use></svg></button>',
+	responsive: [
+		{
+			breakpoint: 767,
+			settings: {
+				vertical: false,
+			}
+		},
+		{
+			breakpoint: 479,
+			settings: {
+				vertical: false,
+				slidesPerRow: 3,
+				slidesToShow: 3,
+			}
+		},
+	]
+});
+$('.js-product-slider-preview').slick({
+	autoplay: false,
+	vertical: true,
+	infinite: false,
+	slidesPerRow: 1,
+	slidesToShow: 1,
+	asNavFor: '.js-product-slider-thumb',
+	arrows: false,
+	draggable: false,
+	responsive: [
+		{
+			breakpoint: 767,
+			settings: {
+				vertical: false,
+				fade: true,
+			}
+		},
+	]
+});

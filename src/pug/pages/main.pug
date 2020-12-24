@@ -59,42 +59,7 @@ block content
 				.col-12
 					.h1 Лучшие предложения
 
-					.catalog-list.js-slider-offer
-						-
-							var list=[
-								{img:'slide-offer1.jpg', title:'Барный стул Stag темно-серое сидение', old_price:'15 900 руб.', price:'10 390 руб.', label:'Б/у'},
-								{img:'slide-offer2.png', title:'Барный стул Viola SG 65 серо-коричневый', old_price:'15 900 руб.', price:'13 090 руб.', label:'new'},
-								{img:'slide-offer3.png', title:'Барный стул Nina SG хром/белый', price:'5 760 руб.', label:'new'},
-								{img:'slide-offer4.jpg', title:'Барный стул Stag коричневое сидение', price:'9 990 руб.', label:'Б/у'},
-								{img:'slide-offer5.jpg', title:'Барный стул Viola SG 65 серо-коричневый', old_price:'15 900 руб.', price:'13 090 руб.', label:'new'},
-								{img:'slide-offer6.jpg', title:'Барный стул Viola SG 65 серо-коричневый', old_price:'15 900 руб.', price:'13 090 руб.', label:'new'},
-								{img:'slide-offer7.jpg', title:'Барный стул Nina SG хром/белый', price:'5 760 руб.', label:'new'},
-								{img:'slide-offer8.jpg', title:'Барный стул Stag коричневое сидение', price:'9 900 руб.', label:'new'},
-								{img:'slide-offer8.jpg', title:'Барный стул Stag коричневое сидение', price:'9 900 руб.', label:'new'},
-							]
-
-						each item in list
-							.catalog-list__item
-								.catalog-list__img
-									img(src="/assets/img/"+item.img, alt="")
-
-									.catalog-list__sticker= item.label
-
-									.catalog-list__action
-										a(href="#").btn.btn_small
-											span.btn__text Заказать
-
-										a(href="#").catalog-list__star
-											+svg('ic-star','ic-star', '25', '25')
-
-								.catalog-list__content
-									.catalog-list__title
-										a(href="#")= item.title
-
-									.catalog-list__price
-										if(item.old_price)
-											span.catalog-list__old-price= item.old_price
-										span.catalog-list__cur-price= item.price
+					+catalog-slider('sticker')
 
 	section.services-wrap.bg-grey
 		.container

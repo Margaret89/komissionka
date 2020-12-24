@@ -79,6 +79,15 @@ block content
 
 				br
 				br
+				.h2 Нестандартный radiobutton
+				.check-color
+					input#radiocolor(type='radio', name='color', checked='checked')
+					label.check-color__label(for='radiocolor')
+						span.check-color__mark(style='background: #f4e06c')
+
+
+				br
+				br
 				.h2 Нестандартный select
 				select.js-select
 					option(value="Популярности") Популярности
@@ -171,6 +180,16 @@ block content
 						.type-icon__img
 							+svg('ic-arrow-up','ic-arrow-up', '38', '20')
 						.type-icon__name ic-arrow-up
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-fill-down','ic-arrow-fill-down', '28', '16')
+						.type-icon__name ic-arrow-fill-down
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-fill-up','ic-arrow-fill-up', '28', '16')
+						.type-icon__name ic-arrow-fill-up
 
 					.type-icon__item
 						.type-icon__img

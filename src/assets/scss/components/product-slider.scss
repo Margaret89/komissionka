@@ -1,0 +1,147 @@
+/*-------------- product-slider -----------------*/
+.product-slider{
+	display: flex;
+	width: 100%;
+	height: 550px;
+	position: relative;
+	margin-top: 16px;
+}
+
+.product-slider-preview,
+.product-slider-thumb{
+	display: none;
+}
+
+.product-slider-preview.slick-initialized,
+.product-slider-thumb.slick-initialized{
+	display: block;
+}
+
+.product-slider-thumb{
+	margin: 0 20px 0 0;
+	padding: 0;
+	list-style: none;
+	width: 110px;
+
+	&__item{
+		vertical-align: top;
+		width: 110px;
+		height: 110px;
+		margin: 0;
+		padding: 0;
+		border: 1px solid transparent;
+		list-style: none;
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+
+	&__item img{max-height: 100%;}
+
+	&__item:hover,
+	.slick-current &__item{
+		border-color: #d9d8d4;
+	}
+
+	&.slick-vertical .slick-slide{border: 0;}
+
+	.slick-prev,
+	.slick-next{
+		z-index: 1;
+		height: 19px;
+		width: 34px;
+		opacity: 1;
+		border: 0;
+		outline: 0;
+		padding: 0;
+		background: transparent;
+		position: absolute;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		cursor: pointer;
+
+		.icon{
+			fill: $color-text;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	.slick-prev {top: -40px;}
+	.slick-next {bottom: 0px;}
+
+	.slick-prev:hover,
+	.slick-next:hover{
+		.icon{fill: $color-brown;}
+	}
+
+	.slick-disabled{display: none!important;}
+}
+
+.product-slider-preview{
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&.slick-vertical .slick-slide{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 550px;
+	}
+}
+
+// @media (max-width: 1023px) {
+// 	.product-slider-preview{
+// 		width: calc(100% - 160px);
+// 	}
+
+// 	.product-slider-preview.slick-vertical .slick-slide{
+// 		max-width: 100%
+// 	}
+// }
+
+// @media (max-width: 767px) {
+// 	.product-slider{
+// 		box-shadow: none;
+// 	}
+
+// 	.product-slider{
+// 		max-width: 300px;
+// 		margin-left: auto;
+// 		margin-right: auto;
+
+// 		&__wrap{
+// 			flex-direction: column-reverse;
+// 		}
+// 	}
+
+// 	.product-slider-thumb {
+// 		max-width: 100%;
+// 		margin: 0;
+// 		width: 100%;
+// 		padding: 20px 0 0;
+
+// 		&__item{
+// 			margin: 20px 5px;
+// 		}
+
+// 		.slick-prev,
+// 		.slick-next {
+// 			top: 50%;
+// 			width: 1em;
+// 			height: 100%;
+// 		}
+// 		.slick-prev {
+// 			left: 0;
+// 		}
+
+// 		.slick-next {
+// 			right: 0;
+// 		}
+// 	}
+
+// 	.product-slider-preview{
+// 		width: 100%;
+// 	}
+// }
