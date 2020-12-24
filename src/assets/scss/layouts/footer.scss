@@ -8,7 +8,7 @@
 		margin-top: -30px;
 	}
 
-	.social-white{margin-bottom: 27px;}
+	.social{margin-bottom: 27px;}
 }
 
 .footer-info{
@@ -48,7 +48,7 @@
 	&__item{margin-bottom: 10px;}
 }
 
-.social-white{
+.social{
 	display: inline-flex;
 	flex-wrap: wrap;
 
@@ -59,17 +59,21 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 50%;
-		border: 1px solid #fff;
+		border: 1px solid $color-text;
 		transition: all 0.3s ease 0s;
 
 		.icon{
-			fill: #fff;
+			fill: $color-text;
 			transition: all 0.3s ease 0s;
 		}
 	}
 
 	&__item:not(:last-child){margin-right: 20px;}
-	&__item:hover{border-color: $color-brown;}
+
+	&_white &__item{border: 1px solid #fff}
+	&_white &__item .icon{fill: #fff}
+
+	&__item:hover{border: 1px solid $color-brown;}
 	&__item:hover .icon{fill: $color-brown;}
 }
 

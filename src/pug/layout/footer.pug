@@ -38,7 +38,7 @@ footer.footer
 								a(href="#").footer-menu__link= item
 
 					.footer-info__action
-						.social-white
+						.social.social_white
 							-
 								var list=[
 									{icon:'ic-instagram', width:'15', height:'15'},
@@ -47,7 +47,7 @@ footer.footer
 									{icon:'ic-telegram', width:'15', height:'15'},
 								]
 							each item in list
-								a(href="#").social-white__item
+								a(href="#").social__item
 									+svg(item.icon, item.icon, item.width, item.height)
 
 						.footer-pay

@@ -1,0 +1,40 @@
+/*-------------- contacts -----------------*/
+.contacts{
+	margin-bottom: 25px;
+
+	&__item{
+		font-family: $font-literata;
+		text-align: center;
+		margin-bottom: 14px;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 85px;
+		height: 85px;
+		border-radius: 50%;
+		background: $color-orange;
+		text-decoration: none;
+		border: 1px solid transparent;
+		position: relative;
+		transition: all 0.2s ease 0s;
+
+		.icon{
+			fill: #fff;
+			transition: all 0.2s ease 0s;
+			z-index: 1;
+		}
+	}
+
+	&__label{
+		@include font(normal, normal, rem(18px), 1.2, $color-text);
+		margin-top: 10px;
+	}
+
+	&__text{
+		@include font(normal, 600, rem(18px), 1.2, $color-text);
+		margin-top: 12px;
+	}
+}

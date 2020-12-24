@@ -1,0 +1,68 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+	- var h1 = 'Контакты';
+
+block breadcrumb
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Контакты'},
+					];
+
+				+breadcrumbs(breadcrumbs)
+
+block content
+	section.contacts
+		.container
+			.row
+				-
+					var list=[
+						{icon:'ic-phone', width:'46', height:'46', label:'Телефон', text:'8 (800) 900-45-41', link:'tel:+78009004541'},
+						{icon:'ic-mail', width:'41', height:'41', label:'E-mail', text:'info-komissionka@gmail.com', link:'mailto:info-komissionka@gmail.com'},
+						{icon:'ic-address', width:'40', height:'40', label:'Адрес', text:'СПб, Английский пр, 24'},
+						{icon:'ic-clock', width:'41', height:'41', label:'Режим работы', text:'Пн-Вс с 09:00 до 20:00'},
+					]
+
+				each item in list
+					.col-3
+						.contacts__item
+							.contacts__icon
+								+svg(item.icon, item.icon, item.width, item.height)
+
+							.contacts__label= item.label
+							.contacts__text
+								if(item.link)
+									a(href=item.link)= item.text
+								else
+									= item.text
+
+	section.map
+		.container
+			.row
+				.col-12
+					script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afbb57e9923c827c6c4de9ce8bdef33fef7c286096b9ab59b1fd55c70b6503edb&width=100%25&height=458&lang=ru_RU&scroll=true')
+
+					.map-desc
+						.map-desc__title Наша парковка
+
+						.map-desc__content
+							.map-desc__text Выходите из метро по направлению ул. Профсоюзная. Идёте 300 метров до улицы Кедрова и поворачиваете налево. Движетесь 600 метров до конца улицы Кедрова, переходите через дорогу и идёте 400 метров до ул. Большая Черёмушкинская, 34, БЦ «Микроэкономика».
+							.social
+								-
+									var list=[
+										{icon:'ic-instagram', width:'15', height:'15'},
+										{icon:'ic-facebook', width:'7', height:'15'},
+										{icon:'ic-vk', width:'17', height:'9'},
+										{icon:'ic-telegram', width:'15', height:'15'},
+									]
+								each item in list
+									a(href="#").social__item
+										+svg(item.icon, item.icon, item.width, item.height)
+
+
+	include ../components/feedback-form
