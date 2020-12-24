@@ -6,13 +6,16 @@ block variables
 
 
 block breadcrumb
-	-
-		var breadcrumbs=[
-			{href:'/',name:'Главная'},
-			{href:'#',name:'Типографика'},
-		];
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Типографика'},
+					];
 
-	+breadcrumbs(breadcrumbs)
+				+breadcrumbs(breadcrumbs)
 
 block content
 	section.container
@@ -73,6 +76,15 @@ block content
 						span.input-check__mark
 							
 						span.input-check__text label
+
+				br
+				br
+				.h2 Нестандартный select
+				select.js-select
+					option(value="Популярности") Популярности
+					option(value="Цене по возрастанию") Цене
+					option(value="Цене по убыванию") Цене
+					option(value="Популярности") Наименованию
 
 				br
 				br
@@ -159,6 +171,16 @@ block content
 						.type-icon__img
 							+svg('ic-arrow-up','ic-arrow-up', '38', '20')
 						.type-icon__name ic-arrow-up
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-prev','ic-prev', '16', '30')
+						.type-icon__name ic-prev
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-next','ic-next', '16', '30')
+						.type-icon__name ic-next
 
 					.type-icon__item
 						.type-icon__img

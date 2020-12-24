@@ -1,0 +1,43 @@
+/*-------------- pager -----------*/
+.pager{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+
+	&__item,
+	&__arr{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: top;
+		width: 40px;
+		height: 40px;
+		font-family: $font-literata;
+		@include font(normal, normal, rem(15px), 1, #6a6a6a);
+		text-decoration: none;
+		border: 1px solid #ecedee;
+		transition: all 0.2s ease;
+		margin: 0 5px;
+	}
+
+	&__arr{
+		.icon{
+			fill: #6a6a6a;
+			transition: all 0.2s ease;
+		}
+	}
+
+	&__item:hover,
+	&__item.active,
+	&__arr:hover{
+		background: $color-orange;
+		border: 1px solid $color-orange;
+		color: #fff;
+	}
+
+	&__arr:hover{
+		.icon{fill: #fff;}
+	}
+}

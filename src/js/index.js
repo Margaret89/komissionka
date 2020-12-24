@@ -131,3 +131,14 @@ if($('.js-slider-range').length){
 		});
 	});
 }
+
+// Стилизация выпадающего списка
+if ($('.js-select').length) {
+	$('.js-select').select2({
+		width: '100%',
+		minimumResultsForSearch: Infinity,
+		placeholder: function(){
+			$(this).attr('data-placeholder');
+		},
+	});
+}

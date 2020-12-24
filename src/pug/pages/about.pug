@@ -5,13 +5,16 @@ block variables
 	- var h1 = 'О нас';
 
 block breadcrumb
-	-
-		var breadcrumbs=[
-			{href:'/',name:'Главная'},
-			{href:'#',name:'О нас'},
-		];
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'О нас'},
+					];
 
-	+breadcrumbs(breadcrumbs)
+				+breadcrumbs(breadcrumbs)
 
 block content
 	include ../components/about

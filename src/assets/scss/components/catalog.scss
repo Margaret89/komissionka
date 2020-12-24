@@ -47,5 +47,22 @@
 }
 
 .catalog{
-	margin-top: 26px;;
+	margin-top: 26px;
+
+	.breadcrumb{
+		justify-content: flex-start;
+		padding-top: 0;
+		padding-bottom: 14px;
+		margin-top: -9px;
+	}
+
+	& + .about{margin-top: 80px;}
+}
+
+.catalog-top{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-top: -4px;
+	margin-bottom: 14px;
 }

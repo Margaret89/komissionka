@@ -1,0 +1,11 @@
+/*-------------- sort -----------------*/
+.sort{
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	&__label{
+		@include font(normal, 500, rem(16px), 1.2, $color-text);
+	}
+
+	&__item{margin-right: 10px;}
+}

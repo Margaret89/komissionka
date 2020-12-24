@@ -1,0 +1,28 @@
+/*-------------- page-count -----------------*/
+.page-count{
+	display: inline-flex;
+	flex-wrap: wrap;
+
+	&__label{
+		@include font(normal, 500, rem(16px), 1.2, $color-text);
+		margin-right: 18px;
+	}
+
+	&__list{margin-top: -3px;}
+
+	&__item{
+		@include font(normal, 500, rem(16px), 1.2, $color-brown);
+		padding: 0 2px;
+		text-decoration: none;
+		border-bottom: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__item:not(:last-child){margin-right: 16px;}
+
+	&__item.active,
+	&__item:hover{
+		color: #6a6a6a;
+		border-bottom: 1px solid #6a6a6a;
+	}
+}

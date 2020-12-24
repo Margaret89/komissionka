@@ -9,8 +9,7 @@ import '@fancyapps/fancybox'
 import 'slick-slider/slick/slick.min.js';
 import PerfectScrollbar from 'perfect-scrollbar';
 import noUiSlider from 'nouislider';
-
-// import 'select2';
+import 'select2';
 import Inputmask from "inputmask";
 
 export {$, Inputmask, PerfectScrollbar, noUiSlider};
