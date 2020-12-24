@@ -1,0 +1,122 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Ваша корзина';
+	- var h1 = 'Ваша корзина';
+	- var hide_menu = 'true';
+
+block breadcrumb
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Ваша корзина'},
+					];
+
+				+breadcrumbs(breadcrumbs)
+
+block content
+	section.basket
+		.container
+			.row
+				.col-12
+					table.basket-table
+						thead
+							tr.basket-table__head
+								th Фото
+								th Наименование
+								th.bt-center Цена
+								th.bt-center Кол-во
+								th.bt-center Сумма
+								th
+
+						tbody
+							-
+								var list=[
+									{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.', sum:'10 390 руб.', count:'1'},
+									{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.', sum:'20 780 руб.', count:'2'},
+								]
+
+						each item in list
+							tr
+								td
+									a(href="#").basket-table__img(style="background-image: url(/assets/img/"+item.img+")")
+
+								td
+									a(href="#").basket-table__name= item.name
+
+								td
+									.basket-table__price= item.price
+
+								td.bt-center
+									.counter
+										.counter__minus -
+										input.counter__field(type='text' value=item.count)
+										.counter__plus +
+
+								td.bt-center
+									.basket-table__price= item.price
+
+								td.bt-center
+									.basket-table__del
+										+svg('ic-close','ic-close', '15', '15')
+
+					.basket-res
+						form.form-coupon
+							.form-coupon__field
+								input(type="text", placeholder="Промокод")
+
+							button(type='submit').btn.btn_border
+								.btn__text Применить
+
+						.basket-res__price Итого: 30 970 руб.
+
+					.basket-btn
+						a(href="#").btn.btn_shadow
+							.btn__text Оформить заказ
+
+						a(href="#").btn.btn_border
+							.btn__text Вернуться в магазин
+
+
+	section.info-block-wrap
+		.container
+			.row
+				.col-12
+					.info-block
+						.info-block__title Акции и скидки:
+
+						.info-block__content
+							p Чем хорош стул Lars от испанской фабрики La Forma? Всем. Но этого мало. Тогда по порядку: оригинальный дизайн, каркас из массива бука, удобная подушка в цвет сиденья. Отлично впишется в современный интерьер со скандинавскими нотками. В интернет-магазине KOMISSIONKA вы найдёте подлинную дизайнерскую мебель и предметы интерьера от российских и европейских мебельных фабрик. Активно сотрудничаем с дизайнерами и компаниями. Посетите шоу-рум в Москве и лично убедитесь в качестве изделий.
+			
+			.row
+				.col-12
+					.info-block
+						.info-block__title Доставка:
+
+						.info-block__content
+							p Москва и область:*
+							p малогабаритные товары — <b>от 400 руб.</b> (подъём бесплатно);
+							p среднегабаритные — <b>от 800 руб.</b> (+400 руб.  подъём);
+							p крупногабаритные — <b>от 1 600 руб.</b> (+800 руб. подъём);
+							p прочая мебель — <b>от 2 800 руб.</b> (+1-2% подъём от общей стоимости заказа).
+							p Малогабаритными считаются товары или группы товаров, размер которых в упаковке не превышает 150 см по трём сторонам или 100 см по одной из сторон (светильники, текстиль, декор). Среднегабаритными товарами считаются пуфы, вешалки, стулья и табуреты, столики, зеркала. Крупногабаритными считаются ТВ-тумбы, стеллажи, шкафы. К прочей мебели относятся сборные грузы и товары, которые помещаются только в грузовые автомобили и требуют 2-х грузчиков для подъёма. Доставка осуществляется только после 100% предоплаты заказа.
+							p * Ориентировочная стоимость доставки указана на странице«Доставка и оплата». Точную стоимость уточняйте у менеджера. Доставка осуществляется по всей России, стоимость указана для Москвы. Доставка за МКАД осуществляется по тарифу +50 руб. / км.
+
+	section.slider-offer.slider-offer_indent.bg-grey
+		.container
+			.row
+				.col-12
+					.h1 Похожие товары
+
+					+catalog-slider()
+	
+	section.slider-offer.slider-offer_indent
+		.container
+			.row
+				.col-12
+					.h1 Другие товары из коллекции
+
+					+catalog-slider()

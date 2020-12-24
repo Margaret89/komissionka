@@ -166,6 +166,12 @@ button.btn_small{
 	line-height: rem(43px);
 }
 
+.btn_shadow,
+input[type="submit"].btn_shadow,
+button.btn_shadow{
+	box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
 .btn_border,
 input[type="submit"].btn_border,
 button.btn_border{

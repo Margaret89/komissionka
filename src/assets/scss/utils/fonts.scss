@@ -109,6 +109,28 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Lato';
+	src: url('#{$path-fonts}/Lato/Lato-Black.eot');
+	src: local('Lato Black'), local('Lato-Black'),
+		url('#{$path-fonts}/Lato/Lato-Black.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/Lato/Lato-Black.woff') format('woff'),
+		url('#{$path-fonts}/Lato/Lato-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Lato';
+	src: url('#{$path-fonts}/Lato/Lato-BlackItalic.eot');
+	src: local('Lato Black Italic'), local('Lato-BlackItalic'),
+		url('#{$path-fonts}/Lato/Lato-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('#{$path-fonts}/Lato/Lato-BlackItalic.woff') format('woff'),
+		url('#{$path-fonts}/Lato/Lato-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
 /* Literata */
 @font-face {
     font-family: 'Literata';

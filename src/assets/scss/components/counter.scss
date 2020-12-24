@@ -1,0 +1,42 @@
+/*-------------- counter -----------------*/
+.counter{
+	display: inline-flex;
+	align-items: center;
+	// justify-content: center;
+	// width: 150px;
+	height: 45px;
+	background: #fff;
+	box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.15);
+
+	&__minus,
+	&__plus{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 45px;
+		height: 100%;
+		@include font(normal, bold, rem(25px), 1.2, $color-orange);
+		cursor: pointer;
+		padding-bottom: 5px;
+		transition: all 0.2s ease 0s;
+	}
+
+
+	&__minus:hover,
+	&__plus:hover{
+		color: $color-brown;
+	}
+
+	&__field{
+		width: 60px;
+		height: 100%;
+		outline: none;
+		border: 0;
+		border-radius: 0;
+		font-family:  $font-site;
+		@include font(normal, 300, rem(16px), 45px, $color-text);
+		text-align: center;
+		padding: 0;
+		background: transparent;
+	}
+}

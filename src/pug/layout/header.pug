@@ -73,17 +73,18 @@ header.header
 							.header-middle__address СПб, Английский пр, 24
 							.header-middle__time Режим работы: Пн-Вс с 09:00 до 20:00
 
-	nav.main-menu
-		.container
-			.row
-				.col-12
-					ul.main-menu__list
-						-
-							var list=['Мебель', 'Свет', 'Декор', 'Посуда', 'Оборудование для ресторанов', 'Интерьеры', 'Распродажа', 'Текстиль', 'Зеркала']
-						
-						each item in list
-							li.main-menu__item
-								a(href="#").main-menu__link= item
+	if(hide_menu != 'true')
+		nav.main-menu
+			.container
+				.row
+					.col-12
+						ul.main-menu__list
+							-
+								var list=['Мебель', 'Свет', 'Декор', 'Посуда', 'Оборудование для ресторанов', 'Интерьеры', 'Распродажа', 'Текстиль', 'Зеркала']
+							
+							each item in list
+								li.main-menu__item
+									a(href="#").main-menu__link= item
 
 
 .action-panel

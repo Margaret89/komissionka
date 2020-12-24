@@ -1,6 +1,11 @@
 /*-------------- slider-offer -----------------*/
 .slider-offer{
-	padding: 32px 0;
+	margin: 32px 0;
+
+	&_indent{
+		margin: 0;
+		padding: 51px 0 71px;
+	}
 
 	h1, .h1{padding-right: 170px;}
 
