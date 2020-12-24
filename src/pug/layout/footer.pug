@@ -2,15 +2,16 @@ footer.footer
 	.container
 		.row
 			.col-12
-				form.form-subcribe
-					.form-subcribe__title Подписка на e-mail рассылку
+				if(subscribe != 'hide')
+					form.form-subcribe
+						.form-subcribe__title Подписка на e-mail рассылку
 
-					.form-subcribe__content
-						.form-subcribe__field
-							input(type="email", placeholder="Введите Ваш e-mail", required="required")
+						.form-subcribe__content
+							.form-subcribe__field
+								input(type="email", placeholder="Введите Ваш e-mail", required="required")
 
-						button.btn.btn_border(type="submit")
-							span.btn__text Подписаться
+							button.btn.btn_border(type="submit")
+								span.btn__text Подписаться
 
 
 				.footer-info

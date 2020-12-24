@@ -1,0 +1,63 @@
+/*-------------- wish-list -----------------*/
+.wish-list{
+	font-family: $font-literata;
+
+	&__row{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 1px solid rgba(0,0,0,0.1);
+	}
+
+	&__row:first-child{border-top: 1px solid rgba(0,0,0,0.1);}
+
+	&__item{padding: 20px;}
+
+	&__img{
+		display: inline-block;
+		vertical-align: top;
+		width: 110px;
+		height: 110px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		text-decoration: none;
+		border-bottom: none;
+		border: 1px solid #d9d8d4;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__img:hover{border: 1px solid $color-brown;}
+
+	&__name{
+		display: block;
+		max-width: 408px;
+		@include font(normal, 600, rem(18px), 1.2, $color-brown);
+		text-decoration: none;
+		border-bottom: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__name:hover{text-decoration: underline;}
+
+	&__price{
+		@include font(normal, 600, rem(20px), 1.2, $color-text);
+		white-space: nowrap;
+	}
+
+	&__del{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 15px;
+		height: 15px;
+		cursor: pointer;
+
+		.icon{
+			fill: $color-text;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&__del:hover .icon{fill: $color-brown;}
+}

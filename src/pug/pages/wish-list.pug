@@ -1,0 +1,50 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Избранное';
+	- var h1 = 'Ваши отложенные товары';
+	- var subscribe = 'hide';
+
+block breadcrumb
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Избранное'},
+					];
+
+				+breadcrumbs(breadcrumbs)
+
+block content
+	section.wish-list
+		.container
+			.row
+				.col-12
+					-
+						var list=[
+							{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.'},
+							{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.'},
+							{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.'},
+							{img:'product-slider2.jpg', name:'Барный стул Viola SG 65 серо-коричневый', price:'10 390 руб.'},
+						]
+
+					each item in list
+						.wish-list__row
+							.wish-list__item
+								a(href="#").wish-list__img(style="background-image: url(/assets/img/"+item.img+")")
+
+							.wish-list__item
+								a(href="#").wish-list__name= item.name
+
+							.wish-list__item
+								.wish-list__price= item.price
+
+							.wish-list__item
+								a(href="#").btn.btn_small.btn_shadow
+									span.btn__text Добавить в корзину
+
+							.wish-list__item
+								.basket-table__del
+									+svg('ic-close','ic-close', '15', '15')
