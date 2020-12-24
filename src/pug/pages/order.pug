@@ -1,0 +1,179 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Оформление заказа';
+	- var h1 = 'Оформление заказа';
+	- var hide_menu = 'true';
+
+block breadcrumb
+	.container
+		.row
+			.col-12
+				-
+					var breadcrumbs=[
+						{href:'/',name:'Главная'},
+						{href:'#',name:'Ваша корзина'},
+						{href:'#',name:'Оформление заказа'},
+					];
+
+				+breadcrumbs(breadcrumbs)
+
+block content
+	section.order
+		form
+			.order__top
+				.container
+					.row
+						.col-8
+							.order__title Ваши личные данные
+
+							.order__fields
+								.order__field
+									input(type="text", placeholder="Ваше имя")
+								.order__field
+									input(type="text", placeholder="Ваш телефон", class="js-phone")
+								.order__field
+									input(type="email", placeholder="Ваш e-mail")
+								.order__field
+									input(type="text", placeholder="Код который пришел в смс")
+
+						.col-4
+							.order-res
+								.order-res__top
+									.order-res__title Ваш заказ
+									a(href="#").order-res__link Изменить
+
+								.order-res__content
+									.order-res__list
+										-
+											var list=[
+												{label:'Сумма:', text:'30 970 руб.'},
+												{label:'Доставка:', text:'150 руб.'},
+												{label:'Скидка:', text:'500 руб.', color:'orange'},
+												{label:'Итого:', text:'30 620 руб.', size:'big'},
+											]
+										each item in list
+											.order-res__item(class=item.color=='orange'?'order-res__item_orange':'', class=item.size=='big'?'order-res__item_big':'')
+												.order-res__label= item.label
+												.order-res__text= item.text
+			
+			.container
+				.row
+					.col-12
+						hr
+
+			.order__info
+				.container
+					.row
+						.col-6
+							.order__title Способы доставки
+
+							.order-choose
+								-
+									var list=[
+										{
+											title:'Санкт-Петербург',
+											param:[
+												{text:'Самовывоз - Большой проспект П.С., д. 25', status:'active'},
+												{text:'Самовывоз - ул. Уральская, д. 13'},
+												{text:'Курьерская доставка по городу (доставка платная, рассчитывается индивидуально)'},
+											]
+										},
+										{
+											title:'Москва',
+											param:[
+												{text:'Самовывоз - ул. Нижняя Сыромятническая, д. 11, корп. Б'},
+												{text:'Курьерская доставка по городу (доставка платная, рассчитывается индивидуально)'},
+											]
+										},
+										{
+											title:'Россия',
+											param:[
+												{text:'Курьерская доставка по России (доставка платная, рассчитывается индивидуально)'},
+											]
+										},
+									]
+								
+								each item, num in list
+									.order-choose__sect
+										.order-choose__label= item.title
+
+										.order-choose__list
+											each param, index in item.param
+												.order-choose__item
+													.input-radio
+														if(param.status)
+															input(type='radio', checked='checked', name='radio1', id='radio'+num+index)
+														else
+															input(type='radio', name='radio1', id='radio'+num+index)
+														label.input-radio__label(for='radio'+num+index)
+															span.input-radio__mark
+																
+															span.input-radio__text= param.text
+						
+						.col-6
+							.order__title Способы оплаты
+
+							.order-choose
+								-
+									var list=[
+										{
+											title:'Наличными',
+											param:[
+												{text:'Только для мелкогабаритных товаров в наличии на складе в Москве. Более подробная информация доступна на странице «доставка и оплата».', status:'active'},
+											]
+										},
+										{
+											title:'Оплата онлайн',
+											param:[
+												{text:'После оформления заказа с вами свяжется менеджер и выставит счет удаленно для оплаты картой.'},
+											]
+										},
+									]
+								
+								each item, num in list
+									.order-choose__sect
+										.order-choose__label= item.title
+
+										.order-choose__list
+											each param, index in item.param
+												.order-choose__item
+													.input-radio
+														if(param.status)
+															input(type='radio', checked='checked', name='radio2', id='radio'+num+index)
+														else
+															input(type='radio', name='radio2', id='radio'+num+index)
+														label.input-radio__label(for='radio'+num+index)
+															span.input-radio__mark
+																
+															span.input-radio__text= param.text
+
+								.order-choose-res
+									.order-choose-res__item Сумма: 30 970 руб.
+									.order-choose-res__item Доставка: 150 руб.
+									.order-choose-res__item.order-choose-res__item_orange Скидка 500 руб.
+
+			.container
+				.row
+					.col-12
+						.order__bottom
+							.order__total Итого: 30 620 руб.
+
+							.form-coupon
+								.form-coupon__field
+									input(type="text", placeholder="Промокод")
+
+								a(href="#").btn.btn_border
+									span.btn__text Применить
+
+							.order__btn
+								button(type="submit").btn.btn_shadow
+									span.btn__text Оформить заказ
+
+							.order__polit
+								.input-check
+									input#polit3(type='checkbox', checked='checked', required='required')
+									label.input-check__label(for='polit3')
+										span.input-check__mark
+											
+										span.input-check__text Я даю согласия с Политикой обработки персональных данных

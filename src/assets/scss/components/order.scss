@@ -1,0 +1,182 @@
+/*-------------- order -----------------*/
+.order{
+	margin-bottom: 24px;
+	
+	&__title{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(30px), 1.2, $color-text);
+		letter-spacing: 0.35px;
+		margin-bottom: 35px;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	textarea{
+		display: inline-block;
+		height: rem(50px);
+		width: 100%;
+		font-family: $font-site;
+		@include font(normal, 500, rem(16px), rem(48px), $color-text);
+		padding: 0;
+		margin: 0;
+		border: 0;
+		box-shadow: none;
+		border-bottom: solid 1px #dfdfdf;
+		outline: 0;
+		background: transparent;
+		transition: all 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 120px;
+		line-height: 1.2;
+		padding: 15px 0;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder,
+	textarea::placeholder,
+	input[type="text"]::-webkit-input-placeholder,
+	input[type="email"]::-webkit-input-placeholder,
+	input[type="password"]::-webkit-input-placeholder,
+	textarea::-webkit-input-placeholder,
+	input[type="text"]:-moz-placeholder,
+	input[type="email"]:-moz-placeholder,
+	input[type="password"]:-moz-placeholder,
+	textarea:-moz-placeholder{
+		font-weight: 300;
+		color: $color-text;
+		opacity: 1;
+	}
+
+	input[type="text"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	textarea:focus{
+		border-color: $color-orange;
+	}
+
+	input[type="text"].error,
+	input[type="email"].error,
+	input[type="password"].error,
+	textarea.error{
+		border-color: #ff0000;
+	}
+
+	&__fields{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	&__field{
+		width: calc(50% - 15px);
+		margin-bottom: 43px;
+	}
+
+	&__top{margin-bottom: 20px;}
+	&__info{margin-top: 10px;}
+
+	&__bottom{
+		text-align: center;
+		border-top: 1px solid rgba(0,0,0,0.1);
+		padding-top: 30px;
+		margin-top: 35px;
+	}
+
+	&__total{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(30px), 1.2, $color-text);
+		letter-spacing: 0.35px;
+		margin-bottom: 20px;
+	}
+
+	.form-coupon{margin: 7px 0;}
+	&__btn{margin-top: 43px;}
+
+	&__polit{
+		margin-top: 40px;
+
+		.input-check__text{font-weight: 300;}
+	}
+}
+
+.order-res{
+	background: #f3f2ee;
+	margin-top: 10px;
+
+	&__top{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 20px 15px;
+		border-bottom: 1px solid #fff;
+	}
+
+	&__title{
+		font-family: $font-literata;
+		@include font(normal, 600, rem(30px), 1.2, $color-text);
+		letter-spacing: 0.35px;
+	}
+
+	&__link{
+		@include font(normal, 500, rem(16px), 1.2, $color-brown);
+		text-decoration: none;
+		border-bottom: none;
+		margin-left: 10px;
+	}
+
+	&__link:hover{text-decoration: underline;}
+	&__content{padding: 14px 20px 27px;}
+
+	&__item{
+		display: flex;
+		justify-content: space-between;
+		font-family: $font-literata;
+		@include font(normal, 500, rem(17px), 1.2, $color-text);
+	}
+
+	&__item_orange{color: $color-dark-orange;}
+
+	&__item_big{
+		font-size: rem(30px);
+		font-weight: 600;
+	}
+
+	&__item:not(:last-child){margin-bottom: 15px;}
+
+	&__label,
+	&__text{
+		width: 50%;
+	}
+
+	&__label{padding-right: 10px;}
+}
+
+.order-choose{
+	margin-top: 50px;
+
+	&__label{
+		@include font(normal, bold, rem(20px), 1.2, $color-text);
+		margin-bottom: 15px;
+	}
+
+	&__item:not(:last-child){margin-bottom: 17px;}
+	&__sect:not(:last-child){margin-bottom: 27px;}
+}
+
+.order-choose-res{
+	border-top: 1px solid rgba(0,0,0,0.1);
+	padding-top: 25px;
+	margin-top: 35px;
+
+	&__item{
+		font-family: $font-literata;
+		@include font(normal, 500, rem(17px), 1.2, $color-text);
+	}
+
+	&__item_orange{color: $color-orange;}
+	&__item:not(:last-child){margin-bottom: 20px;}
+}

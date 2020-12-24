@@ -2,13 +2,16 @@
 .form-coupon{
 	display: inline-flex;
 
-	&__field{margin-right: 34px;}
+	&__field{
+		width: 396px;
+		margin-right: 34px;
+	}
 
 	input[type="text"],
 	input[type="email"]{
 		display: inline-block;
 		height: rem(50px);
-		width: 396px;
+		width: 100%;
 		font-family: $font-site;
 		@include font(normal, 500, rem(16px), rem(48px), $color-text);
 		padding: 0;
