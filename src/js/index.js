@@ -51,6 +51,18 @@ if($('.js-slider-offer').length){
 					slidesToShow: 3,
 				}
 			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+				}
+			},
 		]
 	});
 }
@@ -189,7 +201,6 @@ $('.js-product-slider-thumb').slick({
 			breakpoint: 479,
 			settings: {
 				vertical: false,
-				slidesPerRow: 3,
 				slidesToShow: 3,
 			}
 		},

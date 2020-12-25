@@ -23,6 +23,29 @@
 }
 
 @media (max-width: 767px) {
+	.slider-offer{
+		padding-bottom: 30px;
+
+		.catalog-list{
+			padding-bottom: 45px;
+
+			.slick-slide{margin: 0;}
+		}
+
+		h1, .h1{
+			text-align: center;
+			padding-right: 0;
+		}
+
+		.slick-arrow{
+			top: auto;
+			bottom: 5px;
+		}
+
+		.ic-slider-prev{left: calc(50% - 68px);}
+		.ic-slider-next{right: calc(50% - 68px);}
+	}
+
 	.offer{
 		h1, .h1{
 			text-align: center;

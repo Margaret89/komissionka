@@ -57,13 +57,20 @@
 		@include font(normal, 500, rem(17px), 1.2, $color-brown);
 		text-decoration: none;
 		border-bottom: none;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	&__click:hover{text-decoration: underline;}
 
-	&__main{margin-bottom: 50px;}
+	&__main{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 50px;
+	}
 
 	&__info{
+		width: calc(100% - 655px);
 		.h1, h1{margin-bottom: 10px;}
 	}
 }
@@ -109,5 +116,16 @@
 		line-height: 1.375;
 		p{line-height: 1.375;}
 		p:last-child{margin-bottom: 0;}
+	}
+}
+
+@media (max-width: 991px) {
+	.catalog-detail{
+		&__main{display: block;}
+
+		&__info{
+			width: 100%;
+			margin-top: 30px;
+		}
 	}
 }
