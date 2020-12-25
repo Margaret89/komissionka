@@ -126,3 +126,36 @@
 		}
 	}
 }
+
+@media (max-width: 1219px) {
+	.feedback-form{
+		&__content{
+			background-size: 300px;
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.feedback-form{
+		&__content{
+			background-size: 235px;
+			padding: 30px 0 0;
+			margin-bottom: -10px;
+		}
+
+		.form-site{
+			background: rgba(255,255,255,0.7);
+			padding: 15px 10px 30px;
+		}
+	}
+
+	.form-site{
+		&_hor &__content{display: block;}
+		&__col{width: 100%;}
+
+		&__field_full,
+		&__field_full textarea{
+			height: 150px;
+		}
+	}
+}

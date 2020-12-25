@@ -173,7 +173,11 @@
 }
 
 @media (max-width: 767px) {
-	.footer{padding-bottom: 95px;}
+	.footer{
+		padding-bottom: 95px;
+
+		.form-subcribe{transform: none;}
+	}
 
 	.footer-info{
 		margin-top: 0;
