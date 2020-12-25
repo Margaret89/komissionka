@@ -79,3 +79,14 @@
 	&__sub-item:not(:last-child){margin-bottom: 10px;}
 	&__item:hover &__sub{display: block;}
 }
+
+@media (max-width: 1219px) {
+	.top-menu{
+		&__item,
+		&__link{
+			font-size: rem(14px);
+		}
+
+		&__item:not(:last-child){margin-right: 25px;}
+	}
+}

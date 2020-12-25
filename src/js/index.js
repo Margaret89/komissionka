@@ -1,6 +1,12 @@
 import { each } from 'jquery';
 import {$, Inputmask, PerfectScrollbar, noUiSlider} from './common';
 
+var $windowWidth = $(window).width();
+
+$(window).on('resize', function(){
+	$windowWidth = $(window).width();
+});
+
 // Стрелка наверх
 $(window).on('scroll', function(){
 	if($(this).scrollTop()>300){
@@ -18,6 +24,15 @@ if($('.js-top-slider').length){
 		infinite: true,
 		arrows: false,
 		dots: true,
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					dots: false,
+					vertical: false,
+				}
+			},
+		]
 	});
 }
 
@@ -29,6 +44,14 @@ if($('.js-slider-offer').length){
 		slidesToScroll: 1,
 		prevArrow: '<svg class="icon ic-slider-prev" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-prev"></use></svg>',
 		nextArrow: '<svg class="icon ic-slider-next" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-next"></use></svg>',
+		responsive: [
+			{
+				breakpoint: 1220,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+		]
 	});
 }
 
@@ -191,3 +214,88 @@ $('.js-product-slider-preview').slick({
 		},
 	]
 });
+
+
+// Слайдер новостей
+if($('.js-news-list').length){
+	newsSlider();
+
+	$(window).on('resize', function(){
+		newsSlider();
+	});
+
+	function newsSlider(){
+		if ($windowWidth < 992) {
+			$('.js-news-list:not(.slick-initialized)').slick({
+				infinite: false,
+				prevArrow: '<svg class="icon ic-slider-prev" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-prev"></use></svg>',
+				nextArrow: '<svg class="icon ic-slider-next" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-next"></use></svg>',
+			});
+		} else {
+			$(".js-news-list.slick-initialized").slick("unslick");
+		}
+	}
+}
+
+// Слайдер услуг
+if($('.js-services').length){
+	servicesSlider();
+
+	$(window).on('resize', function(){
+		servicesSlider();
+	});
+
+	function servicesSlider(){
+		if ($windowWidth < 768) {
+			$('.js-services:not(.slick-initialized)').slick({
+				infinite: false,
+				prevArrow: '<svg class="icon ic-slider-prev" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-prev"></use></svg>',
+				nextArrow: '<svg class="icon ic-slider-next" width="51" height="16"><use xlink:href="assets/sprites/sprite.svg#ic-slider-next"></use></svg>',
+			});
+		} else {
+			$(".js-services.slick-initialized").slick("unslick");
+		}
+	}
+}
+
+// Создание мобильного меню
+var arrMobileMenu = [];
+$('.js-add-mm').each(function(){
+	var indexItem = $(this).attr('data-order');
+	arrMobileMenu[indexItem] = $(this);
+});
+
+for (var i = 0; i < arrMobileMenu.length; i++) {
+	$(arrMobileMenu[i]).clone().appendTo('.js-mobile-menu-content');
+}
+
+
+// Открыть/Закрыть мобильное меню
+$('.js-open-menu').on('click', function(){
+	$('.js-shadow').addClass('is-visible');
+	$('.js-mobile-menu').addClass('open');
+	$('.js-body').addClass('no-scroll');
+});
+
+$('.js-close-menu').on('click', function(){
+	 closeMobileMenu();
+});
+
+$('.js-shadow').on('click', function(){
+	closeMobileMenu();
+});
+
+function closeMobileMenu() {
+	$('.js-shadow').removeClass('is-visible');
+	$('.js-mobile-menu').removeClass('open');
+	$('.js-body').removeClass('no-scroll');
+}
+
+// Обрезание текста по количеству символов (включено только на мобильном разрешении)
+if($('.js-slice-text').length){
+	$('.js-slice-text').readmore({
+		speed: 75,
+		moreLink: '<a href="#" class="slice-text__link">Читать подробнее</a>',
+		lessLink: '<a href="#" class="slice-text__link">Скрыть</a>',
+	});
+}

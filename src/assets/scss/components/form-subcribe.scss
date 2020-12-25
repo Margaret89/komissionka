@@ -66,3 +66,49 @@
 		min-width: 210px;
 	}
 }
+
+@media (max-width: 991px) {
+	.form-subcribe{
+		flex-wrap: wrap;
+		padding: 20px;
+		
+		&__title,
+		&__content{
+			width: 100%;
+			max-width: 100%;
+		}
+		
+		&__title{
+			margin-right: 0;
+			margin-bottom: 15px;
+			font-size: rem(26px);
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.form-subcribe{
+		margin: -30px -10px 30px;
+		box-shadow: none;
+		transform: none;
+		padding: 30px 10px;
+
+		&__title{
+			font-size: rem(20px);
+			letter-spacing: 0;
+			margin-bottom: 10px;
+		}
+
+		&__content{
+			display: block;
+			text-align: center;
+		}
+
+		&__field{margin: 0 0 30px;}
+
+		input[type="email"],
+		input[type="text"]{
+			width: 100%;
+		}
+	}
+}

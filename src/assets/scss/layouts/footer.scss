@@ -141,3 +141,88 @@
 		left: 0;
 	}
 }
+
+@media (max-width: 991px) {
+	.footer-info{
+		flex-wrap: wrap;
+
+		&__logo,
+		.footer-menu,
+		&__action{
+			width: 50%;
+			margin: 0 0 30px 0;
+		}
+
+		&__logo,
+		&__action{
+			padding-right: 15px;
+		}
+
+		.footer-menu{padding-left: 15px;}
+
+		&__logo{
+			img{max-width: 186px;}
+		}
+	}
+
+	.footer-contacts{
+		width: 50%;
+		margin: 0 0 30px 0;
+		padding-left: 15px;
+	}
+}
+
+@media (max-width: 767px) {
+	.footer{padding-bottom: 95px;}
+
+	.footer-info{
+		margin-top: 0;
+		text-align: center;
+
+		&__logo,
+		.footer-menu,
+		&__action{
+			width: 100%;
+			padding: 0;
+		}
+
+		&__logo,
+		&__action{
+			margin-bottom: 23px;
+		}
+
+		.footer-menu{
+			text-align: left;
+			margin-bottom: 25px;
+		}
+	}
+
+	.footer-contacts{
+		width: 100%;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+
+	.footer-pay{
+		&__list{justify-content: center;}
+	}
+
+	.footer-bottom{
+		display: block;
+		padding-top: 0;
+		border-top: none;
+		font-size: rem(13px);
+		color: rgba(255,255,255,0.5);
+		text-align: center;
+
+		a{color: rgba(255,255,255,0.5);}
+
+		&__polit{
+			margin-left: 0;
+			padding-left: 0;
+			margin-top: 10px;
+		}
+
+		&__polit::before{display: none;}
+	}
+}

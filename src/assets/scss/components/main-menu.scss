@@ -17,6 +17,7 @@
 	&__link{
 		@include font(normal, 500, rem(20px), 1.2, $color-text);
 		text-decoration: none;
+		text-align: center;
 		border-bottom: none;
 		transition: all 0.2s ease 0s;
 	}
@@ -24,4 +25,39 @@
 	&__link:hover{color: $color-brown;}
 	&__item{padding: 0 8px;}
 	&__item:not(:last-child){margin-right: 20px;}
+}
+
+@media (max-width: 1339px) {
+	.main-menu{
+		&__item:not(:last-child){margin-right: 18px;}
+
+		&__item,
+		&__link{
+			font-size: rem(18px);
+		}
+	}
+}
+
+@media (max-width: 1219px) {
+	.main-menu{
+		&__item:not(:last-child){margin-right: 0;}
+
+		&__item,
+		&__link{
+			font-size: rem(16px);
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.main-menu{
+		&__item,
+		&__link{
+			font-size: rem(13px);
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.main-menu{display: none;}
 }

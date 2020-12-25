@@ -73,8 +73,11 @@ header.header
 							.header-middle__address СПб, Английский пр, 24
 							.header-middle__time Режим работы: Пн-Вс с 09:00 до 20:00
 
+						.ic-hamburger.js-open-menu.d-sm-none
+							span
+
 	if(hide_menu != 'true')
-		nav.main-menu
+		nav.main-menu.js-add-mm(data-order="2")
 			.container
 				.row
 					.col-12
@@ -86,13 +89,20 @@ header.header
 								li.main-menu__item
 									a(href="#").main-menu__link= item
 
+	.mobile-menu.js-mobile-menu.d-sm-none
+		span.ic-hamburger.active.js-close-menu
+			span
+
+		.mobile-menu__content-wrap.js-mobile-menu-content-wrap
+			.mobile-menu__content.js-mobile-menu-content
+
 
 .action-panel
 	-
 		var list=[
 			{icon:'ic-basket', width:'25', height:'25', link:'#', count:'0'},
 			{icon:'ic-star', width:'25', height:'25', link:'#', count:'0'},
-			{icon:'ic-search', width:'25', height:'25', link:'#search-popup', fancybox:'true'},
+			{icon:'ic-search', width:'25', height:'25', link:'#search-popup', fancybox:'true', class:'js-btn-search'},
 			{icon:'ic-person', width:'22', height:'25', link:'#auth-popup', fancybox:'true', class:'js-btn-auth-popup'},
 		]
 

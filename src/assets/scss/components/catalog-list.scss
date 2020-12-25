@@ -55,8 +55,6 @@
 		.btn-star{margin-left: 20px;}
 	}
 
-	&__img:hover &__action{opacity: 1;}
-
 	&__content{
 		position: relative;
 		padding: 25px;
@@ -85,6 +83,10 @@
 	&__title a:hover{text-decoration: underline;}
 
 	&__price{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		text-align: center;
 		@include font(normal, 600, rem(20px), 1.2, $color-text);
 		margin-top: 25px;
 	}
@@ -92,7 +94,12 @@
 	&__old-price{
 		@include font(normal, 600, rem(17px), 1.2, #808080);
 		text-decoration: line-through;
-		margin-right: 14px;
+	}
+
+	&__old-price,
+	&__cur-price{
+		white-space: nowrap;
+		margin: 0 7px;
 	}
 
 	.slick-arrow{
@@ -123,9 +130,58 @@
 		cursor: auto;
 	}
 
-	// .slick-prev:hover{background-image: url(/assets/img/slider-prev.svg);}
-	// .slick-next{
-	// 	background-image: url(/assets/img/slider-next.svg);
-	// 	right: 100px;
-	// }
+	.slick-track{display: flex;}
+	.slick-slide{height: auto;}
+	.slick-slide > div,
+	.slick-slide .catalog-list__item{
+		height: 100%;
+	}
+}
+
+@media (min-width: 768px) {
+	.catalog-list{
+		&__img:hover &__action{opacity: 1;}
+	}
+}
+
+@media (max-width: 767px) {
+	.catalog-list{
+		margin-left: 0;
+		margin-right: 0;
+
+		&__item{
+			width: 100%;
+			padding-bottom: 65px;
+			margin-left: 0;
+			margin-right: 0;
+			position: relative;
+		}
+
+		&__img{position: static;}
+
+		&__action{
+			width: 0;
+			height: 0;
+			opacity: 1;
+			background: transparent;
+			position: static;
+
+			.btn{
+				width: 176px;
+				position: absolute;
+				bottom: 30px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+			}
+
+			.btn-star{
+				background: transparent;
+				position: absolute;
+				top: 0;
+				right: 0;
+				box-shadow: none;
+			}
+		}
+	}
 }

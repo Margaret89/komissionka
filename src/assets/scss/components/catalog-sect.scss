@@ -60,3 +60,29 @@
 		margin: 20px;
 	}
 }
+
+@media (max-width: 1219px) {
+	.catalog-sect{
+		&__item{height: 200px;}
+	}
+}
+
+@media (max-width: 991px) {
+	.catalog-sect{
+		&__item{height: 160px;}
+		&__text{font-size: rem(21px);}
+	}
+}
+
+@media (max-width: 767px) {
+	.catalog-sect{
+		margin-top: 15px;
+		
+		&__item{
+			height: 270px;
+			margin-bottom: 20px;
+		}
+
+		&__text{font-size: rem(25px);}
+	}
+}

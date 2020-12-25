@@ -52,3 +52,114 @@
 
 	&__info{text-align: right;}
 }
+
+@media (max-width: 1219px) {
+	.header-top{
+		&__item{width: calc(50% - 100px);}
+	}
+
+	.header-middle{
+		&__contacts,
+		&__info{
+			width: calc(50% - 100px);
+		}
+	}
+}
+
+@media (max-width: 991px) {
+	.header-top{display: none;}
+
+	.header-middle{
+		&__logo{margin-top: 0;}
+
+		&__content{
+			align-items: center;
+			padding-top: 15px;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.header-middle{
+		&__contacts,
+		&__info{
+			display: none;
+		}
+
+		&__logo{width: 143px;}
+	}
+
+	.header-middle{
+		&__content{padding-top: 10px;}
+	}
+
+	.mobile-menu{
+		position: fixed;
+		top: 0;
+		left: -100%;
+		height: 100%;
+		width: 100%;
+		background: #fff;
+		padding-top: 42px;
+		z-index: 1000;
+		overflow-y: auto;
+		overflow-x: hidden;
+		transition: left 0.3s ease;
+
+		&.open{left: 0;}
+
+		&__content-wrap{
+			height: calc(100vh - 105px);
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		.ic-hamburger{
+			box-shadow: none;
+			padding: 0;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+
+			span{width: 100%;}
+		}
+
+		.footer-contacts{
+			width: 100%;
+			color: $color-text;
+			padding: 10px 10px 22px;
+			margin: 0;
+			font-size: rem(16px);
+			line-height: 1.8;
+			border-bottom: 1px solid #efeeeb;
+
+			a{color: $color-text;}
+
+			a.footer-contacts__mail{
+				color: $color-brown;
+				border-bottom: 1px dashed $color-brown;
+			}
+		}
+
+		.main-menu{
+			display: block;
+
+			&__list{
+				display: block;
+				border-bottom: none;
+				padding: 23px 0;
+			}
+
+			&__item,
+			&__link{
+				font-size: rem(20px);
+				text-align: left;
+			}
+
+			&__item{
+				margin-bottom: 25px;
+				padding: 0;
+			}
+		}
+	}
+}

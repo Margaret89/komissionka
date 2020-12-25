@@ -33,3 +33,20 @@
 		.fancybox-close-small{padding: 0;}
 	}
 }
+
+@media (max-width: 767px) {
+	.popup{
+		&.fancybox-content{
+			width: 100%;
+			max-width: 500px;
+			padding: 62px 10px;
+		}
+
+		&__content{
+			min-width: 0;
+			padding: 20px 20px 30px;
+		}
+
+		&__main{padding: 0;}
+	}
+}

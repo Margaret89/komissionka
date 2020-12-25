@@ -29,3 +29,48 @@
 }
 
 .page-header + .about{margin-top: -10px;}
+
+.slice-text{
+	max-height: 330px;
+	overflow: hidden;
+	transition: all 0.3s ease 0s;
+
+	&__link{
+		display: inline-block;
+		@include font(normal, 300, rem(16px), 1.2, $color-brown);
+		margin: 7px 0;
+	}
+}
+
+@media (max-width: 991px) {
+	.about{
+		&__img{
+			margin-right: 0;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.about{
+		&__text{
+			p:last-child{margin-bottom: 0;}
+
+			.slice-text{
+				height: auto!important;
+				max-height: none;
+				overflow: visible;
+
+				&__link{display: none;}
+			}
+		}
+	}
+}
+@media (max-width: 767px) {
+	.about{
+		&__img{
+			padding: 38px 0;
+			margin-bottom: 28px;
+		}
+	}
+}

@@ -19,11 +19,12 @@ block content
 				.top-slider__content
 					.container
 						.row
-							.col-5
-								.top-slider__title= item.title
-								.top-slider__type= item.type
-								a.btn.btn_border(href="#")
-									span.btn__text Подробнее
+							.col-sm-6.col-lg-5
+								.top-slider__info
+									.top-slider__title= item.title
+									.top-slider__type= item.type
+									a.btn.btn_border(href="#")
+										span.btn__text Подробнее
 								
 
 	section.catalog-sect
@@ -43,29 +44,71 @@ block content
 					]
 
 				each item in list
-					div(class="col-"+item.col)
+					div(class="col-sm-"+item.col)
 						a(href="#").catalog-sect__item
 							.catalog-sect__img(style="background-image: url(/assets/img/"+item.img+")")
 							.catalog-sect__text= item.text
 
-	.container
+	.container.d-none.d-sm-block
 		.row
 			.col-12
 				hr
 
-	section.slider-offer
+	section.slider-offer.d-none.d-sm-block
 		.container
 			.row
 				.col-12
 					.h1 Лучшие предложения
 
+					
 					+catalog-slider('sticker')
+
+	section.offer.d-sm-none
+		.container
+			.row
+				.col-12
+					.h1 Лучшие предложения
+
+					.catalog-list
+						-
+							var list=[
+								{img:'slide-offer1.jpg', title:'Барный стул Stag темно-серое сидение', old_price:'15 900 руб.', price:'10 390 руб.', label:'Б/у'},
+								{img:'slide-offer2.png', title:'Барный стул Viola SG 65 серо-коричневый', old_price:'15 900 руб.', price:'13 090 руб.', label:'new'},
+								{img:'slide-offer3.png', title:'Барный стул Nina SG хром/белый', price:'5 760 руб.', label:'new'},
+							]
+
+						each item in list
+							.catalog-list__item
+								.catalog-list__img
+									img(src="/assets/img/"+item.img, alt="")
+
+									.catalog-list__sticker= item.label
+
+									.catalog-list__action
+										a(href="#").btn.btn_small.btn_shadow
+											span.btn__text Заказать
+
+										a(href="#").btn-star
+											+svg('ic-star','ic-star', '25', '25')
+
+								.catalog-list__content
+									.catalog-list__title
+										a(href="#")= item.title
+
+									.catalog-list__price
+										if(item.old_price)
+											span.catalog-list__old-price= item.old_price
+										span.catalog-list__cur-price= item.price
+
+					.offer__more
+						a(href="#") Показать больше
+					
 
 	section.services-wrap.bg-grey
 		.container
 			.row
 				.col-12
-					.services
+					.services.js-services
 						-
 							var list=[
 								{icon:'ic-master-class', width:'53', height:'53', title:'Мастер', title_second:'классы'},
@@ -97,17 +140,18 @@ block content
 				.col-12
 					.h1 Последние новости
 
-		.news-list
-			.container
-				.row
+		
+		.container
+			.row
+				.col-12
 					-
 						var list=[
 							{img:'news1.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
 							{img:'news2.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
 							{img:'news3.jpg', title:'Столы, свет и новая коллекция Boho', text:'ТВ-тумбы со стеклянными фасадами, диваны-кровати, кофейные столики со столешницами под мрамор, подвесы в стиле лофт и много других новинок!'},
 						]
-					each item in list
-						.col-4
+					.news-list.js-news-list
+						each item in list
 							.news-list__item
 								a(href="#").news-list__img-wrap
 									span.news-list__img(style="background-image: url(/assets/img/"+item.img+")")
@@ -117,7 +161,7 @@ block content
 
 								.news-list__text= item.text
 
-	.container
+	.container.d-none.d-sm-block
 		.row
 			.col-12
 				hr

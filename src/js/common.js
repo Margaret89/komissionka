@@ -11,5 +11,6 @@ import PerfectScrollbar from 'perfect-scrollbar';
 import noUiSlider from 'nouislider';
 import 'select2';
 import Inputmask from "inputmask";
+import 'readmore-js/readmore.min.js';
 
 export {$, Inputmask, PerfectScrollbar, noUiSlider};

@@ -21,3 +21,29 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	.offer{
+		h1, .h1{
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		&__more{
+			font-family: $font-literata;
+			@include font(normal, 600, rem(18px), 1.2, $color-brown);
+			text-align: center;
+			transition: all 0.2s ease 0s;
+			letter-spacing: 0.3px;
+			margin-top: 12px;
+
+			a{
+				text-decoration: none;
+				border-bottom: none;
+				transition: all 0.2s ease 0s;
+			}
+
+			a:hover{color: $color-orange;}
+		}
+	}
+}
