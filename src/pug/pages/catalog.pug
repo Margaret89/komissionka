@@ -8,141 +8,146 @@ block content
 	section.catalog
 		.container
 			.row
-				.col-3
-					.catalog-menu-wrap
-						.catalog-menu-wrap__title Категории
+				.col-sm-4.col-lg-3
+					.catalog-sidebar
+						.catalog-menu-wrap
+							.catalog-menu-wrap__title.js-btn-category Категории
 
-						-
-							var list=[
-								{text:'Мебель', count:'5 087'},
-								{
-									text:'Столы',
-									count:'1 407',
-									sub:[
-										{text:'Письменные столы', count:'140'},
-										{text:'Журнальные столики', count:'498'},
-										{text:'Обеденные столы', count:'551'},
-									]
-								},
-								{text:'Консоли', count:'198'},
-								{text:'Стулья', count:'789'},
-								{text:'Комоды и тумбы', count:'1 252'},
-								{text:'Диваны', count:'365'},
-								{text:'Кресла', count:'316'},
-								{text:'Шкафы', count:'205'},
-								{text:'Кровати', count:'252'},
-								{text:'Пуфы и банкетки', count:'118'},
-								{text:'Буфеты и витрины', count:'97'},
-								{text:'Настенные полки', count:'69'},
-								{text:'Напольные вешалки', count:'76'},
-								{text:'Стеллажи', count:'218'},
-								{text:'Освещение', count:'10 522'},
-								{text:'Декор', count:'1 681'},
-							]
-
-						ul.catalog-menu
-							each item in list
-								li.catalog-menu__item(class=item.sub?'active':'')
-									a(href="#").catalog-menu__link= item.text
-										|&nbsp;
-										span.catalog-menu__count= item.count
-
-									if(item.sub)
-										ul.catalog-menu__sub
-											each sub in item.sub
-												li.catalog-menu__item
-													a(href="#").catalog-menu__link= sub.text
-														|&nbsp;
-														span.catalog-menu__count= sub.count
-
-
-					.filter
-						.filter__title Характеристики
-
-						.filter__content
 							-
 								var list=[
+									{text:'Мебель', count:'5 087'},
 									{
-										title:'Цена',
-										status:'open',
-										range:'true',
-									},
-									{
-										title:'Тип кресла',
-										params:[
-											'Параметр 1',
-											'Параметр 2',
-											'Параметр 3',
-											'Параметр 4',
-											'Параметр 5',
+										text:'Столы',
+										count:'1 407',
+										sub:[
+											{text:'Письменные столы', count:'140'},
+											{text:'Журнальные столики', count:'498'},
+											{text:'Обеденные столы', count:'551'},
 										]
 									},
-									{
-										title:'Материал',
-										params:[
-											'Ткань',
-											'Дерево',
-											'Натуральная кожа',
-											'Экокожа',
-											'Сталь',
-											'Алюминий',
-											'МДФ',
-											'Шпон',
-											'Замша',
-											'Натуральный мех',
-											'Натуральная кожа',
-											'Экокожа',
-											'Сталь',
-											'Алюминий',
-											'МДФ',
-											'Шпон',
-										]
-									},
-									{
-										title:'Стиль',
-										params:[
-											'Параметр 1',
-											'Параметр 2',
-											'Параметр 3',
-										]
-									},
-									{
-										title:'Размер',
-										params:[
-											'Параметр 1',
-											'Параметр 2',
-										]
-									},
-									
+									{text:'Консоли', count:'198'},
+									{text:'Стулья', count:'789'},
+									{text:'Комоды и тумбы', count:'1 252'},
+									{text:'Диваны', count:'365'},
+									{text:'Кресла', count:'316'},
+									{text:'Шкафы', count:'205'},
+									{text:'Кровати', count:'252'},
+									{text:'Пуфы и банкетки', count:'118'},
+									{text:'Буфеты и витрины', count:'97'},
+									{text:'Настенные полки', count:'69'},
+									{text:'Напольные вешалки', count:'76'},
+									{text:'Стеллажи', count:'218'},
+									{text:'Освещение', count:'10 522'},
+									{text:'Декор', count:'1 681'},
 								]
-							
-							each sect, num in list
-								.filter__sect.js-filter-sect(class=sect.status=='open'?'open':'')
-									.filter__head.js-filter-head= sect.title
-										.filter__arr
 
-									.filter__info.js-filter-info
-										if(sect.range)
-											.range
-												.range__slider
-													#slider-range.js-slider-range(data-min="0", data-max="60000", autocomplete="off")
+							ul.catalog-menu.js-catalog-menu
+								each item in list
+									li.catalog-menu__item(class=item.sub?'active':'')
+										a(href="#").catalog-menu__link= item.text
+											|&nbsp;
+											span.catalog-menu__count= item.count
 
-												.range__fields
-													input#slider-range-min.js-slider-range-min(type="text", placeholder="0 руб.", autocomplete="off")
-													input#slider-range-max.js-slider-range-max(type="text", placeholder="60 000 руб.", autocomplete="off")
-										else
-											.filter__list.js-scroll-content
-												each param, index in sect.params
-													.filter__param
-														.input-check
-															input(type='checkbox',id='checkbox'+num+index)
-															label.input-check__label(for='checkbox'+num+index)
-																span.input-check__mark
-																span.input-check__text= param
+										if(item.sub)
+											ul.catalog-menu__sub
+												each sub in item.sub
+													li.catalog-menu__item
+														a(href="#").catalog-menu__link= sub.text
+															|&nbsp;
+															span.catalog-menu__count= sub.count
 
+						.filter-btn.js-open-filter.d-sm-none
+							+svg('ic-filter','ic-filter', '20', '20')
+
+						.filter.js-filter
+							.filter__close.js-close-filter.d-sm-none
+								span.ic-hamburger.active.js-close-search
+									span
+
+							.filter__title Характеристики
+
+							.filter__content
+								-
+									var list=[
+										{
+											title:'Цена',
+											status:'open',
+											range:'true',
+										},
+										{
+											title:'Тип кресла',
+											params:[
+												'Параметр 1',
+												'Параметр 2',
+												'Параметр 3',
+												'Параметр 4',
+												'Параметр 5',
+											]
+										},
+										{
+											title:'Материал',
+											params:[
+												'Ткань',
+												'Дерево',
+												'Натуральная кожа',
+												'Экокожа',
+												'Сталь',
+												'Алюминий',
+												'МДФ',
+												'Шпон',
+												'Замша',
+												'Натуральный мех',
+												'Натуральная кожа',
+												'Экокожа',
+												'Сталь',
+												'Алюминий',
+												'МДФ',
+												'Шпон',
+											]
+										},
+										{
+											title:'Стиль',
+											params:[
+												'Параметр 1',
+												'Параметр 2',
+												'Параметр 3',
+											]
+										},
+										{
+											title:'Размер',
+											params:[
+												'Параметр 1',
+												'Параметр 2',
+											]
+										},
 										
+									]
+								
+								each sect, num in list
+									.filter__sect.js-filter-sect(class=sect.status=='open'?'open':'')
+										.filter__head.js-filter-head= sect.title
+											.filter__arr
 
-				.col-9
+										.filter__info.js-filter-info
+											if(sect.range)
+												.range
+													.range__slider
+														#slider-range.js-slider-range(data-min="0", data-max="60000", autocomplete="off")
+
+													.range__fields
+														input#slider-range-min.js-slider-range-min(type="text", placeholder="0 руб.", autocomplete="off")
+														input#slider-range-max.js-slider-range-max(type="text", placeholder="60 000 руб.", autocomplete="off")
+											else
+												.filter__list.js-scroll-content
+													each param, index in sect.params
+														.filter__param
+															.input-check
+																input(type='checkbox',id='checkbox'+num+index)
+																label.input-check__label(for='checkbox'+num+index)
+																	span.input-check__mark
+																	span.input-check__text= param
+
+				.col-sm-8.col-lg-9
 					-
 						var breadcrumbs=[
 							{href:'/',name:'Главная'},

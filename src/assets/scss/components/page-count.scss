@@ -26,3 +26,9 @@
 		border-bottom: 1px solid #6a6a6a;
 	}
 }
+
+@media (max-width: 375px) {
+	.page-count{
+		&__list{margin-top: 0;}
+	}
+}

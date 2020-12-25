@@ -299,3 +299,31 @@ if($('.js-slice-text').length){
 		lessLink: '<a href="#" class="slice-text__link">Скрыть</a>',
 	});
 }
+
+// Открыть/Закрыть каталожное меню
+if($('.js-btn-category').length){
+	$('.js-btn-category').on('click', function(){
+		$('.js-catalog-menu').slideToggle(300);
+	});
+}
+
+// Открыть/Закрыть фильтер
+$('.js-open-filter').on('click', function(){
+	$('.js-shadow').addClass('is-visible');
+	$('.js-filter').addClass('open');
+	$('.js-body').addClass('no-scroll');
+});
+
+$('.js-close-filter').on('click', function(){
+	 closeFilterMenu();
+});
+
+$('.js-shadow').on('click', function(){
+	closeFilterMenu();
+});
+
+function closeFilterMenu() {
+	$('.js-shadow').removeClass('is-visible');
+	$('.js-filter').removeClass('open');
+	$('.js-body').removeClass('no-scroll');
+}
