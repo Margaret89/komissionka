@@ -1,11 +1,10 @@
 /*-------------- contacts -----------------*/
 .contacts{
-	margin-bottom: 25px;
-
 	&__item{
 		font-family: $font-literata;
 		text-align: center;
 		margin-bottom: 14px;
+		margin-bottom: 25px;
 	}
 
 	&__icon{
@@ -36,5 +35,26 @@
 	&__text{
 		@include font(normal, 600, rem(18px), 1.2, $color-text);
 		margin-top: 12px;
+	}
+}
+
+@media (max-width: 767px) {
+	.contacts{
+		&__item{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			text-align: left;
+		}
+
+		&__icon{
+			flex: 0 0 60px;
+			width: 60px;
+			height: 60px;
+			padding: 10px;
+		}
+
+		&__content{width: calc(100% - 80px);}
+		&__label{margin-top: 0;}
 	}
 }

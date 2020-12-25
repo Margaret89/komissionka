@@ -29,23 +29,25 @@ block content
 					]
 
 				each item in list
-					.col-3
+					.col-sm-6.col-lg-3
 						.contacts__item
 							.contacts__icon
 								+svg(item.icon, item.icon, item.width, item.height)
 
-							.contacts__label= item.label
-							.contacts__text
-								if(item.link)
-									a(href=item.link)= item.text
-								else
-									= item.text
+							.contacts__content
+								.contacts__label= item.label
+								.contacts__text
+									if(item.link)
+										a(href=item.link)= item.text
+									else
+										= item.text
 
-	section.map
+	section.map-wrap
 		.container
 			.row
 				.col-12
-					script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afbb57e9923c827c6c4de9ce8bdef33fef7c286096b9ab59b1fd55c70b6503edb&width=100%25&height=458&lang=ru_RU&scroll=true')
+					.map
+						script(type='text/javascript' charset='utf-8' async='' src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Afbb57e9923c827c6c4de9ce8bdef33fef7c286096b9ab59b1fd55c70b6503edb&width=100%25&height=458&lang=ru_RU&scroll=true')
 
 					.map-desc
 						.map-desc__title Наша парковка
