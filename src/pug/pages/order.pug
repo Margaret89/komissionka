@@ -24,7 +24,7 @@ block content
 			.order__top
 				.container
 					.row
-						.col-8
+						.col-md-7.col-lg-8
 							.order__title Ваши личные данные
 
 							.order__fields
@@ -37,7 +37,7 @@ block content
 								.order__field
 									input(type="text", placeholder="Код который пришел в смс")
 
-						.col-4
+						.col-md-5.col-lg-4.d-none.d-md-block
 							.order-res
 								.order-res__top
 									.order-res__title Ваш заказ
@@ -57,7 +57,7 @@ block content
 												.order-res__label= item.label
 												.order-res__text= item.text
 			
-			.container
+			.container.d-none.d-sm-block
 				.row
 					.col-12
 						hr
@@ -65,7 +65,7 @@ block content
 			.order__info
 				.container
 					.row
-						.col-6
+						.col-sm-6
 							.order__title Способы доставки
 
 							.order-choose
@@ -111,7 +111,7 @@ block content
 																
 															span.input-radio__text= param.text
 						
-						.col-6
+						.col-sm-6
 							.order__title Способы оплаты
 
 							.order-choose
@@ -153,11 +153,33 @@ block content
 									.order-choose-res__item Доставка: 150 руб.
 									.order-choose-res__item.order-choose-res__item_orange Скидка 500 руб.
 
+			
+			.container.d-md-none
+				.row
+					.col-12
+						.order-res
+							.order-res__top
+								.order-res__title Ваш заказ
+								a(href="#").order-res__link Изменить
+
+							.order-res__content
+								.order-res__list
+									-
+										var list=[
+											{label:'Сумма:', text:'30 970 руб.'},
+											{label:'Доставка:', text:'150 руб.'},
+											{label:'Скидка:', text:'500 руб.', color:'orange'},
+											{label:'Итого:', text:'30 620 руб.', size:'big'},
+										]
+									each item in list
+										.order-res__item(class=item.color=='orange'?'order-res__item_orange':'', class=item.size=='big'?'order-res__item_big':'')
+											.order-res__label= item.label
+											.order-res__text= item.text
 			.container
 				.row
 					.col-12
 						.order__bottom
-							.order__total Итого: 30 620 руб.
+							.order__total.d-none.d-md-block Итого: 30 620 руб.
 
 							.form-coupon
 								.form-coupon__field

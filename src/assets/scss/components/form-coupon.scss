@@ -55,5 +55,17 @@
 @media (max-width: 767px) {
 	.form-coupon{
 		display: block;
+
+		&__field{
+			width: 100%;
+			margin-bottom: 20px;
+			margin-right: 0;
+		}
+
+		.btn,
+		button.btn,
+		input[type="submit"].btn{
+			display: inline-block;
+		}
 	}
 }

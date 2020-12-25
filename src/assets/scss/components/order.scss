@@ -99,7 +99,10 @@
 	&__polit{
 		margin-top: 40px;
 
-		.input-check__text{font-weight: 300;}
+		.input-check__text{
+			font-weight: 300;
+			text-align: left;
+		}
 	}
 }
 
@@ -126,6 +129,7 @@
 		text-decoration: none;
 		border-bottom: none;
 		margin-left: 10px;
+		margin-top: 7px;
 	}
 
 	&__link:hover{text-decoration: underline;}
@@ -179,4 +183,36 @@
 
 	&__item_orange{color: $color-orange;}
 	&__item:not(:last-child){margin-bottom: 20px;}
+}
+
+@media (max-width: 991px) {
+	.order-res{margin-top: 40px;}
+
+	.order{
+		&__bottom{
+			padding-top: 0;
+			border-top: none;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.order{
+		&__title{font-size: rem(26px);}
+		&__fields{display: block;}
+
+		&__field{
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
+
+	.order-choose{
+		margin-top: 0;
+		margin-bottom: 50px;
+	}
+
+	.order-res{
+		&__item_big{font-size: rem(24px);}
+	}
 }

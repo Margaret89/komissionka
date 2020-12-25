@@ -184,17 +184,9 @@
 
 	.basket-res{
 		.form-coupon{
-			&__field{
-				width: 100%;
-				margin-bottom: 20px;
-			}
+			text-align: right;
 
-			.btn,
-			button.btn,
-			input[type="submit"].btn{
-				display: block;
-				margin: 0 0 0 auto;
-			}
+			&__field{width: 100%;}
 		}
 	}
 }
