@@ -51,3 +51,9 @@
 		min-width: 210px;
 	}
 }
+
+@media (max-width: 767px) {
+	.form-coupon{
+		display: block;
+	}
+}

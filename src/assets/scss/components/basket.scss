@@ -95,11 +95,106 @@
 .basket-btn{
 	display: flex;
 	justify-content: center;
-	margin-top: 48px;
+	flex-wrap: wrap;
+	margin-top: 38px;
 
 	.btn{
 		min-width: 210px;
-		margin: 0 14px;
+		margin: 10px 14px;
 		padding: 0 15px;
+	}
+}
+
+@media (max-width: 991px) {
+	.basket-table{
+		&,
+		tbody,
+		td{
+			display: block;
+		}
+
+		tr{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			padding: 20px 0;
+			border-bottom: 1px solid rgba(0,0,0,0.1);
+			position: relative;
+		}
+
+		td{
+			padding: 0;
+			position: static;
+		}
+
+		td::after{display: none;}
+
+		thead,
+		tr.basket-table__head{
+			display: none;
+		}
+
+		&__col-img{
+			flex: 0 0 110px;
+			margin: 0 20px 20px 0;
+		}
+
+		&__col-name{
+			width: calc(100% - 130px);
+			margin-bottom: 20px;
+		}
+
+		td.basket-table__col-name{padding-right: 30px;}
+
+		td.basket-table__col-del{
+			position: absolute;
+			top: 20px;
+			right: 0;
+		}
+
+		&__col-price{
+			width: calc(100% - 170px);
+			margin-left: 20px;
+		}
+
+		&__col-price.bt-center{text-align: right;}
+	}
+
+	.basket-res{
+		display: block;
+
+		.form-coupon{
+			width: 100%;
+
+			&__field{width: calc(100% - 244px);}
+		}
+
+		&__price{
+			text-align: right;
+			margin-top: 20px;
+			margin-left: 0;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.basket-table{
+		&__name{font-size: rem(16px);}
+	}
+
+	.basket-res{
+		.form-coupon{
+			&__field{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+
+			.btn,
+			button.btn,
+			input[type="submit"].btn{
+				display: block;
+				margin: 0 0 0 auto;
+			}
+		}
 	}
 }

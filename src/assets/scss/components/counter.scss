@@ -40,3 +40,14 @@
 		background: transparent;
 	}
 }
+
+@media (max-width: 991px) {
+	.counter{
+		&__minus,
+		&__plus{
+			width: 35px;
+		}
+
+		&__field{width: 40px;}
+	}
+}
