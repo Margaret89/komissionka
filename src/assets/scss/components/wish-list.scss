@@ -61,3 +61,41 @@
 
 	&__del:hover .icon{fill: $color-brown;}
 }
+
+@media (max-width: 991px) {
+	.wish-list{
+		&__row{
+			flex-wrap: wrap;
+			padding: 20px 0;
+			position: relative;
+		}
+
+		&__item{padding: 0;}
+
+		&__item-img{
+			flex: 0 0 110px;
+			margin: 0 20px 10px 0;
+		}
+
+		&__item-name{
+			width: calc(100% - 130px);
+			margin-bottom: 20px;
+			padding-right: 30px;
+		}
+
+		&__name{max-width: 100%;}
+
+		&__item-del{
+			position: absolute;
+			top: 20px;
+			right: 0;
+		}
+
+		&__price{margin: 10px 0;}
+	}
+}
+@media (max-width: 991px) {
+	.wish-list{
+		&__name{font-size: rem(16px);}
+	}
+}

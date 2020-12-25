@@ -32,19 +32,19 @@ block content
 
 					each item in list
 						.wish-list__row
-							.wish-list__item
+							.wish-list__item.wish-list__item-img
 								a(href="#").wish-list__img(style="background-image: url(/assets/img/"+item.img+")")
 
-							.wish-list__item
+							.wish-list__item.wish-list__item-name
 								a(href="#").wish-list__name= item.name
 
-							.wish-list__item
+							.wish-list__item.wish-list__item-price
 								.wish-list__price= item.price
 
-							.wish-list__item
+							.wish-list__item.wish-list__item-btn
 								a(href="#").btn.btn_small.btn_shadow
 									span.btn__text Добавить в корзину
 
-							.wish-list__item
+							.wish-list__item.wish-list__item-del
 								.basket-table__del
 									+svg('ic-close','ic-close', '15', '15')
